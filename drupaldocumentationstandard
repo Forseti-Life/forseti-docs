@@ -1,0 +1,183 @@
+Module documentation guidelines
+Last updated on 16 April 2025
+This documentation needs review. See "Help improve this page" in the sidebar.
+
+When submitting (or maintaining) modules, good documentation is vital in order for the module to receive a wide user base and help future developers expand on your module. All documentation must be in English.
+
+Use the following guidelines when coding modules that are to reside in the Drupal contributions repository.
+
+Minimum requirements
+Provide a helpful project page
+Project pages should be helpful. There are literally thousands of modules, themes, and installation profiles. Site builders need a clear way to understand what your project does. It should always start with a synopsis, telling users what the project does, what problem it solves, and who the intended audience is. Also mention the main features of the project, but avoid hyperbole and do not try to oversell your project. The synopsis should provide enough information for the user to evaluate whether it will suit their needs before they download and install the module.
+If your project is similar to, or otherwise overlaps the functionality of some other project(s), make sure your project page have a section titled Similar projects and how they are different. In this section, list similar projects (with a link to the project page of each project). In addition to listing the projects, briefly explain how they are different from your project.
+Make sure your project page links to all additional resources that exist. When the maintainer edits the projects page, there is a Resources tab in the form where links to various resources can be placed, including the Documentation field, which is for the project documentation guide. If you do not list anything in the Documentation field, the project page will show No documentation guides. 
+Any link added in the Resources tab will appear in the right margin of the project page, under the heading Resources.
+For further instructions, please see Project page template.
+Provide a useful README file. #
+Documentation files should either be in plain text with the file name extension ".txt", or Markdown with the file name extension ".md".
+The base file names should be all-caps ("README" NO "readme") but the extension itself should be all-lowercase (".txt" or ".md", not ".TXT" or ".MD").
+Examples: README.md, README.txt, INSTALL.md, TODO.txt, CHANGELOG.txt, etc.
+The README file should repeat the synopsis on the project page on Drupal.org.
+If the README file becomes large or complex, installation and configuration instructions may be moved into an additional file (INSTALL.txt or INSTALL.md). It would concentrate on the installation tasks: system requirements, installation instructions, frequently asked questions, etc.
+Like module files, README, INSTALL and other plain text files should use Unix-style line-endings (\n), and not windows (\r\n) or mac (\r) line endings.
+The file should be formatted to hard-wrap at 80 characters.
+It should be based upon the README template.
+Provide help text in the Drupal UI. #
+At both the end-user and coder/developer level, the Drupal help pages are the obvious place to access information about your module. All but the most trivial modules should implement hook_help(). See Help text standards for details on how to structure your help documentation.
+The following is example code on how to "inline" the README file and show it in the Drupal UI. It will filter the contents of the file through the Markdown filter if the Markdown module is installed, or render a plain text version of it if it is not.
+
+This is not the recommended/endorsed way to implement hook_help(). It is an example of how it could be implemented, which has its pros and cons, not an example of how it must be implemented.
+
+// Drupal 7
+
+/**
+ * Implements hook_help().
+ */
+function MYMODULE_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#MYMODULE':
+
+      $filepath = dirname(__FILE__) . '/README.md';
+      if (file_exists($filepath)) {
+        $readme = file_get_contents($filepath);
+      }
+      else {
+        $filepath = dirname(__FILE__) . '/README.txt';
+        if (file_exists($filepath)) {
+          $readme = file_get_contents($filepath);
+        }
+      }
+      if (!isset($readme)) {
+        return NULL;
+      }
+      if (module_exists('markdown')) {
+        $filters = module_invoke('markdown', 'filter_info');
+        $info = $filters['filter_markdown'];
+    
+        if (function_exists($info['process callback'])) {
+          $output = $info['process callback']($readme, NULL);
+        }
+        else {
+          $output = '<pre>' . $readme . '</pre>';
+        }
+      }
+      else {
+        $output = '<pre>' . $readme . '</pre>';
+      }
+
+      return $output;
+  }
+}
+// Drupal 8
+
+use Drupal\Component\Utility\Html;
+
+/**
+ * Implements hook_help().
+ */
+function MYMODULE_help($route_name, \Drupal\Core\Routing\RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.MYMODULE':
+      $text = file_get_contents(__DIR__ . '/README.md');
+      if (!\Drupal::moduleHandler()->moduleExists('markdown')) {
+        return '<pre>' . Html::escape($text) . '</pre>';
+      }
+      else {
+        // Use the Markdown filter to render the README.
+        $filter_manager = \Drupal::service('plugin.manager.filter');
+        $settings = \Drupal::configFactory()->get('markdown.settings')->getRawData();
+        $config = ['settings' => $settings];
+        $filter = $filter_manager->createInstance('markdown', $config);
+        return $filter->process($text, 'en');
+      }
+  }
+  return '';
+}
+If your projects depends from the Advanced Help module to provide on-screen documentation, the module Advanced help hint provides the advanced_help_hint_docs function that will link to the help text provided by the Advanced help module, README.md, or README.txt (if at least one of these sources of help exists). In that case, hook_help() would be similar to the following implementation.
+
+/**
+ * Implements hook_help().
+ */
+function MYMODULE_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#MYMODULE':
+      $output = '<p>' . t('A short fallback description.') . '</p>';
+      if (function_exists('advanced_help_hint_docs')) {
+        $output .= '<p>' . advanced_help_hint_docs('MYMODULE', 'http://www.example.org/mymodule-docs', TRUE) . '</p>';
+      }
+      return $output;
+  }
+}
+Provide tips to get new users started. #
+The README file and hook_help() should clearly describe administrative and end-user access, functionality, and module usage, showing new users where to get started, to find the new functionality provided by your module.
+If the module provides general menu items (i.e., non-admin interface links), list the paths, so the user doesn't have to search through the code or admin interface to find them. If the module modifies existing user interface forms using the form API, tell the user what to look for to ensure it is working. If the module requires configuration, provide a link to the settings page and write a small walk-through on how to get it started.
+
+Follow package naming conventions. #
+In the .info file, you have the ability to define a "package" group. Most modules should not use packages at all. Quoting from the Writing .info files page:
+In general, this field should only be used by large multi-module packages, or by modules meant to extend these packages, such as CCK, Views, E-Commerce, Organic Groups and the like.
+
+If you use a package group name, be careful of case sensitivity.
+
+Document all functions. #
+You are expected to use Doxygen style comments throughout your module. Although sometimes it looks like so much boilerplate, it's those inline comments that power the entire api.drupal.org reference site and can do the same for you using the API module.
+Many IDEs can automatically detect Doxygen doc-blocks and provide context-sensitive help, which gives advantages to people reading your code.
+Read the commenting guidelines and pay attention to the usage of @ingroup described there.
+
+Document hooks in a modulename.api.php #
+If your module creates any hooks or has an associated API, add examples of these hooks in a modulename.api.php file. This helps other developers understand the provided API a little easier, but it also gives IDEs hook information. In order for this to be useful, the hooks should be fully documented with Doxygen comments for parameters and return values. See Drupal core's system.api.php for an example of this.
+Create a documentation guide #
+Modules should have a documentation guide (containing one or more pages) on drupal.org under www.drupal.org/docs/7/modules and/or www.drupal.org/docs/contributed-modules depending on which versions of Drupal the module supports. Typical items to include in the documentation guide are the following. (The items marked with an asterisk should be added only when applicable.)
+ 
+Installation
+Basic usage
+This should include configuration, where to find settings, permissions, where to find the in-module help, etc.
+Frequently asked questions
+*API documentation
+*Sample snippets
+Show how to style and include code snippets
+Troubleshooting
+Theming
+To add a new guide for a module, go to www.drupal.org/docs/7/modules or www.drupal.org/docs/contributed-modules, click on the Edit drop-down arrow and select Add guide. Use Add page in the Edit drop-down to add pages in the newly created guide.
+
+Old modules might still have handbooks on www.drupal.org/documentation/modules/contributions that haven't been migrated the new documentation system. Instead of creating a new guide from scratch, this old documentation should be migrated, when appropriate.
+
+Create a gitlab pages site #
+If your module uses Gitlab CI, you can use MKDocs to create a documentation site at project.pages.drupalcode.org
+
+More information is available at https://project.pages.drupalcode.org/gitlab_templates/jobs/pages/
+
+Recommended practices
+This list of suggestions may help to make your module more developer-friendly:
+
+Even if your module doesn't have a need for the hook_install() function, it is common to display a note confirming that the module is installed and ready for action, often providing a link to the administration/configuration page for your module (if it exists). Any hook_install() implementation must be placed in the .install file.
+ 
+// Drupal 7
+
+/**
+ * Implements hook_install().
+ */
+function MYMODULE_install() {
+  drupal_set_message(t("Your Module settings are available under !link", 
+    ['!link' => l(t('Administer > Site configuration > Your Module'),  'admin/settings/yourmodule/settings')]
+  ));
+}
+Note that you should use get_t() to find out if you have to call t() or st() within .install files. Read more on When to use st(), t() and get_t() in install and update functions.
+
+Create links cross-referencing the module action page and its setting page (and help page). These locations are often 3 or 4 clicks away from each other! Using the hook_help method to add a paragraph at the top of related pages may help.
+Inline, context-sensitive cross-referencing is probably better documentation than any number of paragraphs in a third text document explaining how to get from A to B.
+If appropriate, add extra documentation as part of the project distribution, under a subdirectory called docs/. Alternatively, consider using the help/ subdirectory with static HTML-file documentation, as part of the emerging standards in the Advanced Help module.
+Screenshots of the user interface, or diagrams of the processes are especially helpful.
+Try installing and running your code through the API module.
+It's not perfect, but it shows the level of your current documentation, and what it could be if you reviewed your docblock formatting a little.
+If you are hosting your own development or Drupal demo site elsewhere online, consider making your code documentation available, and linking to it from your project page. This is also an Open source best practice. A proposal is afoot to integrate this functionality on drupal.org.
+Install and run the Coder module over your code. This will ensure higher code quality, and coding standards, making your code easier to maintain between users.
+Use inline comments for hint, explanations, or reasoning of any potentially tricky bits of the code. They should hard-wrap at the 80 characters. Syntax looks like this:
+ 
+// On their own line, preceding their subject, using proper caps and
+// punctuation, wrapping at 80 characters.
+Inline comments are intended for and read mainly by maintainers and coders who wish to read the source code to gain deeper understanding of the module functionality. Contextual 'de-obfuscation' comments, TODOs, known limitations, notes-to-self, excuses for doing something the long way and 'gotcha' workaround warnings go here.
+
+Use Doxygen @see references liberally to link related functions. Function names and files are interpreted and linked, so no additional markup is required beyond the @see command itself.
+Keeping functions short (<1 page is good) means you shouldn't have to write up too much extra about the implementation details.
+Encourage contributors to help improve the documentation. Users are encouraged to contribute patches that clarify comments, and such a patch is harmless to fold into version control. Often another pair of eyes will see things that seem to need further explanation even when the developer is more familiar with the mechanics of the module.
+Writing a conceptual overview of the purpose of the code and its general methodology in the @file section is helpful to future developers. It may even help designing the code during the planning stages.
