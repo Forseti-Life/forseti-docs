@@ -1,21 +1,14 @@
-<!-- AUTOMATION VALIDATION: 2026-04-23 - automation of development confirmed for this repo -->
-# Forseti.life - Documentation Hub
+# Forseti Docs
 
-**Last Updated**: February 19, 2026  
-**Repository**: forseti.life  
-**Products**: Job Hunter, Dungeon Crawler, Scientific Experimentation + Clinical Trials (early), Community Safety (early)
+Standalone documentation hub for Forseti products, architecture, technical operations, and market/product artifacts.
 
----
+## What lives here
 
-## Table of Contents
-1. [Overview](#overview)
-2. [Documentation Structure](#documentation-structure)
-3. [Product Documentation](#product-documentation)
-4. [Technical Documentation](#technical-documentation)
-5. [Market Documentation](#market-documentation)
-6. [Operations Guide](#operations-guide)
-
----
+- Dungeoncrawler product documentation
+- Job Hunter documentation
+- product, market, and technical reference material
+- architecture, deployment, and workflow notes
+- security and standards documentation
 
 ## Overview
 
