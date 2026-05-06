@@ -78,7 +78,7 @@ These are the 8 entries managed by `scripts/install-crons.sh`:
 | `ceo-ops` | `0 */2 * * *` | CEO scheduled quality check |
 | `hq-health-heartbeat` | `*/2 * * * *` | Self-healing heartbeat + alert log |
 
-`auto-checkpoint` has **no direct cron entry**. It is managed by `hq-automation-watchdog`, which keeps `auto-checkpoint-loop.sh` running while org automation is enabled.
+`auto-checkpoint` has **no direct cron entry** and is **disabled by policy**. `hq-automation-watchdog` should not restart `auto-checkpoint-loop.sh`.
 
 ## Post-migration checklist
 

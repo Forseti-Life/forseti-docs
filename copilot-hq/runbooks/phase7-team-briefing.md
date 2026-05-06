@@ -72,10 +72,10 @@ Purpose: Control plane for orchestration, release cycle, CI/CD
 20. forseti-agent-evaluation
 
 ### Tier 3: 3 Independent Push Clones
-- `/root/ai-conversation-push/` (forseti-ai-conversation)
-- `/root/dungeoncrawler-tester-push/` (dungeoncrawler-tester)
-- `/root/forseti-cluster-push/` (forseti-cluster)
-- `/root/dungeoncrawler-content-push/` → symlink to Tier 2B
+- `/home/ubuntu/forseti.life/ai-conversation-push/` (forseti-ai-conversation)
+- `/home/ubuntu/forseti.life/dungeoncrawler-tester-push/` (dungeoncrawler-tester)
+- `/home/ubuntu/forseti.life/forseti-cluster-push/` (forseti-cluster)
+- `/home/ubuntu/forseti.life/dungeoncrawler-content-push/` → symlink to Tier 2B
 
 ---
 

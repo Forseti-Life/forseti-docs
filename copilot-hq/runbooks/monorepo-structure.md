@@ -55,14 +55,14 @@ Forseti.Life operates as a **unified monorepo with coordinated submodules** plus
     └── forseti-agent-evaluation/  (Agent evaluation framework)
 ```
 
-### Independent Push Clones (in /root/)
+### Independent Push Clones (under /home/ubuntu/forseti.life/)
 
 ```
-/root/
+/home/ubuntu/forseti.life/
 ├── ai-conversation-push/          (Autonomous AI conversation engine)
 ├── dungeoncrawler-tester-push/    (DungeonCrawler QA utilities)
 ├── forseti-cluster-push/          (Cluster infrastructure utilities)
-└── dungeoncrawler-content-push → SYMLINK to submodule
+└── dungeoncrawler-content-push → SYMLINK to dungeoncrawler-content
 ```
 
 ---
@@ -246,7 +246,7 @@ bash workspace-merge-safe.sh --restore
 
 ## Independent Push Clones (Special Cases)
 
-Three repos in `/root/` are **NOT** submodules:
+Three repos under `/home/ubuntu/forseti.life/` are **NOT** submodules:
 
 - **ai-conversation-push**: Autonomous conversation engine (independent lifecycle)
 - **dungeoncrawler-tester-push**: QA utilities (can be updated independently)
@@ -254,7 +254,7 @@ Three repos in `/root/` are **NOT** submodules:
 
 These are updated manually via CI/CD push jobs, not coordinated with the main release cycle.
 
-**Exception:** `dungeoncrawler-content-push` is now a **symlink** to the submodule version (single source of truth).
+**Exception:** `dungeoncrawler-content-push` remains a symlinked compatibility path to the canonical `dungeoncrawler-content` checkout.
 
 ---
 

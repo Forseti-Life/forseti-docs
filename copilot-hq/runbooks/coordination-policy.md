@@ -20,7 +20,7 @@ The monorepo contains coordinated submodules plus independent product repos:
 **New (10):**
 - forseti-safety-content, forseti-safety-calculator, forseti-content, forseti-community-incident-report, forseti-company-research, forseti-nfr, forseti-copilot-agent-tracker, forseti-institutional-management, forseti-jobhunter-tester, forseti-agent-evaluation
 
-**Independent (3 push clones in /root/):**
+**Independent (3 push clones under /home/ubuntu/forseti.life/):**
 - ai-conversation-push, dungeoncrawler-tester-push, forseti-cluster-push
 
 ## Product Manager (PM) Ownership
@@ -121,13 +121,13 @@ See `runbooks/merge-commit-strategy.md` for full procedures.
 
 ## Special Rules: Push Clones
 
-Three independent push clones in `/root/` follow different rules:
+Three independent push clones under `/home/ubuntu/forseti.life/` follow different rules:
 - **NOT** version-locked with main repo
 - Updated via independent CI/CD jobs
 - Can have different release cadence
 - Useful for infrastructure, utilities, independent tools
 
-Exception: `dungeoncrawler-content-push` is now a **symlink** to the submodule (unified single source of truth).
+Exception: `dungeoncrawler-content-push` remains a **symlink** to the submodule (unified single source of truth).
 
 ## Submodule Maintenance
 

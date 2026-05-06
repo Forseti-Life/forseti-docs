@@ -38,7 +38,7 @@ All 20 submodules are version-locked together in R1-R4 coordinated releases.
 
 ## Independent Push Clones (NOT Coordinated)
 
-These repos in `/root/` follow independent release cadences:
+These repos under `/home/ubuntu/forseti.life/` follow independent release cadences:
 
 | # | Directory | GitHub Repo | Primary Owner | Purpose | Status |
 |---|-----------|-------------|------------------|---------|--------|

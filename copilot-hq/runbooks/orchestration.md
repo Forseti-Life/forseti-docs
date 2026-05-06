@@ -31,9 +31,9 @@ orchestrator-loop.sh  (background daemon, every 60s)
        │
        ├─ 4. exec_agents            scripts/agent-exec-next.sh <agent>  [GenAI call]
        │      ├─ local LLM (llm/runner.py) if model assigned in llm/routing.yaml
-      │      ├─ selected backend for Copilot-routed seats:
-      │      │    - Copilot CLI (`copilot --resume ...`) when available/default
-      │      │    - Bedrock assistant wrapper (`scripts/bedrock-assist.sh`) when configured
+       │      ├─ selected backend for Copilot-routed seats:
+       │      │    - Copilot CLI (`copilot --resume ...`) when `HQ_AGENTIC_BACKEND=copilot`
+       │      │    - Bedrock runner (`llm/bedrock_runner.py`) when `HQ_AGENTIC_BACKEND=bedrock`
        │      └─ on blocked/needs-info → creates sessions/<supervisor>/inbox/<escalation>/
        │           └─ if supervisor=board → inbox/commands/ via ceo-queue.sh
        │
@@ -52,7 +52,7 @@ orchestrator-loop.sh  (background daemon, every 60s)
        └─ 7. publish                scripts/publish-forseti-agent-tracker.sh
                → Drupal copilot_agent_tracker tables + "Todo for Keith" dashboard
 
-auto-checkpoint-loop                (independent daemon, every 2h)
+auto-checkpoint-loop                (disabled; must remain stopped)
 improvement-round-loop              (independent daemon, PM+CEO process review dispatch)
 ```
 
@@ -175,19 +175,33 @@ DRUPAL_ROOT=/var/www/html/forseti ./scripts/bedrock-assist.sh forseti "Validate 
 `scripts/agent-exec-next.sh` now supports selecting the generative backend for Copilot-routed agents.
 
 ```bash
-# default behavior: prefer Copilot; fall back to Bedrock if Copilot is unavailable
-export HQ_AGENTIC_BACKEND=auto
+# default / normal production mode
+export HQ_AGENTIC_BACKEND=copilot
 
-# force Bedrock for agent execution path (local LLM seats still use local models first)
+# force Bedrock for the LangGraph agent execution path
 export HQ_AGENTIC_BACKEND=bedrock
 
-# force Copilot only
-export HQ_AGENTIC_BACKEND=copilot
+# run one seat directly through the executor
+./scripts/agent-exec-next.sh architect-copilot
 ```
 
 Notes:
 - Local LLM seats remain unchanged: local model first, then selected backend fallback.
-- Bedrock path uses `scripts/bedrock-assist.sh` with site-aware routing and system-prompt grounding.
+- LangGraph Bedrock execution goes through `scripts/agent-exec-next.sh` → `run_bedrock()` → `llm/bedrock_runner.py`.
+- The direct AWS Bedrock calls live in `llm/bedrock_runner.py` via `boto3.client("bedrock-runtime")`, then `client.converse(...)` or fallback `client.invoke_model(...)`.
+- `scripts/bedrock-assist.sh` is a separate Drupal/operator wrapper that calls `ai_conversation.ai_api_service->invokeModelDirect(...)`; it is not the LangGraph agent executor path.
+- `drupal-langgraph/` does not directly invoke Bedrock; it reads HQ runtime artifacts from disk.
+
+### Fast path: where Bedrock is actually called
+When tracing Bedrock usage for LangGraph automation, start here:
+
+| What you need | Path |
+|---|---|
+| Backend selection for agent seats | `scripts/agent-exec-next.sh` |
+| LangGraph executor Bedrock entrypoint | `scripts/agent-exec-next.sh` (`run_bedrock_raw`, `run_bedrock`) |
+| Direct AWS Bedrock API calls | `llm/bedrock_runner.py` |
+| Separate Drupal/operator Bedrock wrapper | `scripts/bedrock-assist.sh` |
+| HQ free-form wrapper over Drupal Bedrock | `scripts/hq-bedrock-chat.sh` |
 
 ### Production validation and troubleshooting scripts
 Use these scripts after deploy and during incidents:

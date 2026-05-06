@@ -5,18 +5,18 @@
 # Seat file scopes may allow work inside a repo, but do not create additional repo owners.
 
 repositories:
-  ai-conversation-push:
+  ai-conversation:
     github: "Forseti-Life/forseti-ai-conversation"
-    local_path: "/root/ai-conversation-push"
+    local_path: "/home/ubuntu/forseti.life/ai-conversation"
     website_scope: "forseti.life"
     product_team: "forseti.life"
-    repo_type: "push-clone"
+    repo_type: "submodule"
     module: "ai_conversation"
     owning_pm: "pm-forseti"
     owning_dev: "dev-forseti"
     owning_qa: "qa-forseti"
     owning_security: "sec-analyst-forseti"
-    notes: "Operational push/mirror repo used in release coordination."
+    notes: "Canonical local checkout for the shared ai_conversation module."
 
   copilot-hq:
     github: "Forseti-Life/copilot-hq"
@@ -42,6 +42,7 @@ repositories:
     owning_dev: "dev-dungeoncrawler"
     owning_qa: "qa-dungeoncrawler"
     owning_security: "sec-analyst-dungeoncrawler"
+    notes: "Canonical local checkout for the dungeoncrawler_content module repository."
 
   dungeoncrawler-content-push:
     github: "Forseti-Life/dungeoncrawler-content"
@@ -68,18 +69,31 @@ repositories:
     owning_security: "sec-analyst-dungeoncrawler"
     notes: "Canonical editable Dungeoncrawler product repo. It is intentionally decoupled from copilot-hq submodule tracking so Dungeoncrawler product work lands in a single Git history. The live Apache site serves /var/www/html/dungeoncrawler/web; its Dungeoncrawler-owned module/theme/config paths now delegate to this repo through the sites/dungeoncrawler compatibility bridge."
 
-  dungeoncrawler-tester-push:
+  dungeoncrawler-tester:
     github: "Forseti-Life/dungeoncrawler-tester"
-    local_path: "/root/dungeoncrawler-tester-push"
+    local_path: "/home/ubuntu/forseti.life/dungeoncrawler-tester"
     website_scope: "dungeoncrawler"
     product_team: "dungeoncrawler"
-    repo_type: "push-clone"
+    repo_type: "submodule"
     module: "dungeoncrawler_tester"
     owning_pm: "pm-dungeoncrawler"
     owning_dev: "dev-dungeoncrawler"
     owning_qa: "qa-dungeoncrawler"
     owning_security: "sec-analyst-dungeoncrawler"
-    notes: "Operational push/mirror repo used in release coordination."
+    notes: "Canonical local checkout for the dungeoncrawler_tester module repository."
+
+  drupal-langgraph:
+    github: "Forseti-Life/drupal-langgraph"
+    local_path: "/home/ubuntu/forseti.life/drupal-langgraph"
+    website_scope: "forseti.life"
+    product_team: "forseti.life"
+    repo_type: "submodule"
+    module: "drupal_langgraph"
+    owning_pm: "pm-forseti"
+    owning_dev: "dev-forseti"
+    owning_qa: "qa-forseti"
+    owning_security: "sec-analyst-forseti"
+    notes: "Canonical local checkout for the Drupal LangGraph module repository."
 
   forseti-agent-evaluation:
     github: "Forseti-Life/forseti-agent-evaluation"
@@ -92,28 +106,57 @@ repositories:
     owning_qa: "qa-forseti"
     owning_security: "sec-analyst-forseti"
 
+  forseti-amisafe:
+    github: "Forseti-Life/forseti-amisafe"
+    local_path: "/home/ubuntu/forseti.life/forseti-amisafe"
+    website_scope: "forseti.life"
+    product_team: "forseti.life"
+    repo_type: "submodule"
+    module: "amisafe"
+    owning_pm: "pm-forseti"
+    owning_dev: "dev-forseti"
+    owning_qa: "qa-forseti"
+    owning_security: "sec-analyst-forseti"
+    notes: "Canonical local checkout for the Amisafe module repository."
+
   forseti-community-incident-report:
     github: "Forseti-Life/forseti-community-incident-report"
     local_path: "/home/ubuntu/forseti.life/forseti-community-incident-report"
     website_scope: "forseti.life"
     product_team: "forseti.life"
     repo_type: "submodule"
+    module: "community_incident_report"
     owning_pm: "pm-forseti"
     owning_dev: "dev-forseti"
     owning_qa: "qa-forseti"
     owning_security: "sec-analyst-forseti"
+    notes: "Canonical local checkout for the community_incident_report module repository."
 
-  forseti-cluster-push:
+  forseti-cluster:
     github: "Forseti-Life/forseti-cluster"
-    local_path: "/root/forseti-cluster-push"
+    local_path: "/home/ubuntu/forseti.life/forseti-cluster"
     website_scope: "forseti.life"
     product_team: "forseti.life"
-    repo_type: "push-clone"
+    repo_type: "submodule"
+    module: "forseti_cluster"
     owning_pm: "pm-forseti"
     owning_dev: "dev-forseti"
     owning_qa: "qa-forseti"
     owning_security: "sec-analyst-forseti"
-    notes: "Operational push/mirror repo used in release coordination."
+    notes: "Canonical local checkout for the forseti_cluster module repository."
+
+  forseti-games:
+    github: "Forseti-Life/forseti-games"
+    local_path: "/home/ubuntu/forseti.life/forseti-games"
+    website_scope: "forseti.life"
+    product_team: "forseti.life"
+    repo_type: "submodule"
+    module: "forseti_games"
+    owning_pm: "pm-forseti"
+    owning_dev: "dev-forseti"
+    owning_qa: "qa-forseti"
+    owning_security: "sec-analyst-forseti"
+    notes: "Canonical local checkout for the forseti_games module repository."
 
   forseti-company-research:
     github: "Forseti-Life/forseti-company-research"
@@ -195,7 +238,7 @@ repositories:
     owning_dev: "dev-forseti"
     owning_qa: "qa-forseti"
     owning_security: "sec-analyst-forseti"
-    notes: "Active ownership follows agents.yaml + module-ownership.yaml. Some legacy seat instructions still reference a separate dev-jobhunter flow and should be reconciled separately."
+    notes: "Canonical local checkout for the job_hunter module repository. Some legacy seat instructions still reference a separate dev-jobhunter flow and should be reconciled separately."
 
   forseti-jobhunter-tester:
     github: "Forseti-Life/forseti-jobhunter-tester"
@@ -203,11 +246,12 @@ repositories:
     website_scope: "forseti.life"
     product_team: "forseti.life"
     repo_type: "submodule"
+    module: "jobhunter_tester"
     owning_pm: "pm-forseti"
     owning_dev: "dev-forseti"
     owning_qa: "qa-forseti"
     owning_security: "sec-analyst-forseti"
-    notes: "Routed through the Forseti product team in current org ownership files."
+    notes: "Canonical local checkout for the jobhunter_tester module repository."
 
   forseti-job-hunter-drupal:
     github: "Forseti-Life/copilot-hq"
@@ -311,3 +355,15 @@ repositories:
     owning_qa: "qa-forseti"
     owning_security: "sec-analyst-forseti"
     notes: "Shared utility repo currently routed through the Forseti product team."
+
+  thetruthperspective:
+    github: "keithaumiller/thetruthperspective"
+    local_path: "/var/www/html/drupal/modules"
+    website_scope: "thetruthperspective.org"
+    product_team: "thetruthperspective.org"
+    repo_type: "site-instance"
+    owning_pm: "pm-thetruthperspective"
+    owning_dev: ""
+    owning_qa: ""
+    owning_security: ""
+    notes: "Live Drupal modules checkout for thetruthperspective.org. The site is currently paused and only PM/BA seats are provisioned, so dev/QA/security seat assignments remain unset until the site is reactivated."
