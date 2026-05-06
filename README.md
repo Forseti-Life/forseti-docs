@@ -25,6 +25,7 @@ This directory contains comprehensive documentation for the Forseti.life project
 - **Scientific Experimentation + Clinical Trials**: Early-stage product line
 - **Community Safety**: Safety platform and mobile capabilities (early-stage)
 - **H3 Geolocation System**: Geospatial processing pipeline using Uber's H3 hexagonal indexing
+- **Copilot HQ**: Operational runbooks, ownership docs, and knowledgebase material
 
 ---
 
@@ -34,6 +35,7 @@ This directory contains comprehensive documentation for the Forseti.life project
 docs/
 ├── README.md (this file)                # Documentation hub and operations guide
 ├── ARCHITECTURE.md                      # System architecture overview
+├── copilot-hq/                          # HQ runbooks, ownership, and knowledgebase docs
 ├── product/                             # 🟢 Product management (Lean Startup)
 │   ├── README.md                        # Product documentation guide
 │   ├── process-flow-validation.md       # End-to-end validation roadmap
@@ -56,6 +58,21 @@ docs/
     ├── data-models.md                   # Database schemas
     └── integration-guides.md            # Third-party integrations
 ```
+
+---
+
+## Copilot HQ Documentation
+
+**Location**: `/copilot-hq/`
+
+Canonical documentation for `Forseti-Life/copilot-hq` now lives here, including:
+
+- `copilot-hq/runbooks/`
+- `copilot-hq/knowledgebase/`
+- `copilot-hq/org-chart/ownership/`
+
+The `copilot-hq` repository keeps compatibility links for those paths, but this
+repository is the source of truth for their content.
 
 ---
 
