@@ -20,7 +20,7 @@ repositories:
 
   copilot-hq:
     github: "Forseti-Life/copilot-hq"
-    local_path: "/home/ubuntu/forseti.life"
+    local_path: "/home/ubuntu/forseti.life/copilot-hq"
     website_scope: "forseti.life"
     product_team: "forseti.life / agent tracker"
     repo_type: "hq"
@@ -29,7 +29,7 @@ repositories:
     owning_dev: "dev-forseti-agent-tracker"
     owning_qa: "qa-forseti-agent-tracker"
     owning_security: "sec-analyst-forseti-agent-tracker"
-    notes: "Canonical HQ working tree is the monorepo root `/home/ubuntu/forseti.life`. The nested `/home/ubuntu/forseti.life/copilot-hq` directory is a subtree/export artifact only and must not be treated as a second live repo root or inbox-scan root. Authoritative repo owner is the Forseti Agent Tracker team; other seats may work in this repo only within their explicitly defined seat-level file scopes."
+    notes: "Canonical HQ working tree is `/home/ubuntu/forseti.life/copilot-hq`. The parent `/home/ubuntu/forseti.life` directory is the shared workspace container for sibling product/module repositories and must not be treated as the HQ git root or inbox-scan root. Authoritative repo owner is the Forseti Agent Tracker team; other seats may work in this repo only within their explicitly defined seat-level file scopes."
 
   dungeoncrawler-content:
     github: "Forseti-Life/dungeoncrawler-content"

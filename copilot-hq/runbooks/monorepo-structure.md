@@ -21,47 +21,29 @@ Forseti.Life operates as a **unified monorepo with coordinated submodules** plus
 
 ```
 /home/ubuntu/forseti.life/
-├── .git/                          (Shared root for copilot-hq tracked content)
-├── .gitmodules                    (Tracks coordinated submodules owned by copilot-hq)
-├── copilot-hq/                    (Control plane: orchestration, releases, governance)
+├── copilot-hq/                    (Canonical HQ git repo root)
+│   ├── .git/                      (HQ git metadata)
 │   ├── orchestrator/              (Release automation, agent dispatch)
 │   ├── org-chart/                 (Instructions, org structure, decision matrix)
 │   └── sessions/                  (Session state, artifacts, inbox/outbox)
 │
-├── ─────── INDEPENDENT PRODUCT CHECKOUTS ───────
-├── dungeoncrawler-pf2e/           (Standalone PF2E product repo checkout; not tracked as a copilot-hq submodule)
-│
-├── ─────── EXISTING SUBMODULES ───────
-├── dungeoncrawler-content/        (Shared content; symlinked in /root/)
-├── forseti-shared-modules/        (Shared utilities, common functions)
+├── ─────── SIBLING PRODUCT / MODULE REPOS ───────
+├── dungeoncrawler-pf2e/           (Standalone PF2E product repo checkout)
+├── dungeoncrawler-content/        (Standalone Dungeoncrawler content module repo)
+├── dungeoncrawler-tester/         (Standalone Dungeoncrawler tester module repo)
 ├── forseti-devops/                (Infrastructure, deployment, scripts)
 ├── forseti-meshd/                 (Mesh networking service)
 ├── forseti-mobile/                (Mobile app code)
 ├── forseti-docs/                  (Public documentation site)
 ├── forseti-platform-specs/        (API specs, standards, design docs)
-├── forseti-job-hunter/            (Job Hunter product)
+├── forseti-job-hunter/            (Job Hunter module repo)
 └── h3-geolocation/                (Geolocation utility library)
-│
-└── ─────── NEW SUBMODULES (10) ───────
-    ├── forseti-safety-content/    (Safety content library)
-    ├── forseti-safety-calculator/ (Safety calculation engine)
-    ├── forseti-content/           (General content repository)
-    ├── forseti-community-incident-report/  (Community incident tracking)
-    ├── forseti-company-research/  (Research & analysis)
-    ├── forseti-nfr/               (Non-functional requirements docs)
-    ├── forseti-copilot-agent-tracker/     (Agent lifecycle tracking)
-    ├── forseti-institutional-management/  (Institutional governance)
-    ├── forseti-jobhunter-tester/ (QA/testing for Job Hunter)
-    └── forseti-agent-evaluation/  (Agent evaluation framework)
 ```
 
 ### Independent Push Clones (under /home/ubuntu/forseti.life/)
 
 ```
 /home/ubuntu/forseti.life/
-├── ai-conversation-push/          (Autonomous AI conversation engine)
-├── dungeoncrawler-tester-push/    (DungeonCrawler QA utilities)
-├── forseti-cluster-push/          (Cluster infrastructure utilities)
 └── dungeoncrawler-content-push → SYMLINK to dungeoncrawler-content
 ```
 

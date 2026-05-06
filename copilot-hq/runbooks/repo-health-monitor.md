@@ -20,7 +20,7 @@ It is **not** part of the default 10-minute CEO monitoring loop. Use it when you
 ## Usage
 
 ```bash
-cd /home/ubuntu/forseti.life
+cd /home/ubuntu/forseti.life/copilot-hq
 
 # report to stdout, exit 1 if duplicates/creep are found
 bash scripts/ceo-repo-health.sh
