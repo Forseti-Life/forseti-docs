@@ -5,6 +5,18 @@
 # Seat file scopes may allow work inside a repo, but do not create additional repo owners.
 
 repositories:
+  .github:
+    github: "Forseti-Life/.github"
+    local_path: "/home/ubuntu/forseti.life/community/.github"
+    website_scope: "community"
+    product_team: "community"
+    repo_type: "community-meta"
+    owning_pm: "pm-infra"
+    owning_dev: "dev-infra"
+    owning_qa: "qa-infra"
+    owning_security: "sec-analyst-open-source"
+    notes: "Community-wide GitHub defaults, workflows, and templates live in the dedicated /home/ubuntu/forseti.life/community workspace."
+
   ai-conversation:
     github: "Forseti-Life/forseti-ai-conversation"
     local_path: "/home/ubuntu/forseti.life/ai-conversation"
@@ -68,6 +80,18 @@ repositories:
     owning_qa: "qa-dungeoncrawler"
     owning_security: "sec-analyst-dungeoncrawler"
     notes: "Canonical editable Dungeoncrawler product repo. It is intentionally decoupled from copilot-hq submodule tracking so Dungeoncrawler product work lands in a single Git history. The live Apache site serves /var/www/html/dungeoncrawler/web; its Dungeoncrawler-owned module/theme/config paths now delegate to this repo through the sites/dungeoncrawler compatibility bridge."
+
+  dungeoncrawler-theme:
+    github: "Forseti-Life/dungeoncrawler-theme"
+    local_path: "/home/ubuntu/forseti.life/dungeoncrawler-theme"
+    website_scope: "dungeoncrawler"
+    product_team: "dungeoncrawler"
+    repo_type: "submodule"
+    owning_pm: "pm-dungeoncrawler"
+    owning_dev: "dev-dungeoncrawler"
+    owning_qa: "qa-dungeoncrawler"
+    owning_security: "sec-analyst-dungeoncrawler"
+    notes: "Canonical standalone repository for the Dungeoncrawler Drupal theme. The copilot-hq sites/dungeoncrawler theme path is a compatibility bridge that symlinks to this repo."
 
   dungeoncrawler-tester:
     github: "Forseti-Life/dungeoncrawler-tester"
@@ -342,7 +366,7 @@ repositories:
     owning_dev: "dev-forseti"
     owning_qa: "qa-forseti"
     owning_security: "sec-analyst-forseti"
-    notes: "Shared library repo used across Forseti components."
+    notes: "Archived shared library repo retained in GitHub for reference only; no active local checkout is expected."
 
   h3-geolocation:
     github: "Forseti-Life/h3-geolocation"
