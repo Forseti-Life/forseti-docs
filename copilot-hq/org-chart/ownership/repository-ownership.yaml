@@ -290,6 +290,18 @@ repositories:
     owning_security: "sec-analyst-forseti"
     notes: "Primary Forseti Drupal deployment target tracked separately in release operations."
 
+  forseti-theme:
+    github: "Forseti-Life/forseti-theme"
+    local_path: "/home/ubuntu/forseti.life/forseti-theme"
+    website_scope: "forseti.life"
+    product_team: "forseti.life"
+    repo_type: "submodule"
+    owning_pm: "pm-forseti"
+    owning_dev: "dev-forseti"
+    owning_qa: "qa-forseti"
+    owning_security: "sec-analyst-forseti"
+    notes: "Canonical standalone repository for the Forseti Drupal theme. The copilot-hq sites/forseti theme path is a compatibility bridge that symlinks to this repo."
+
   forseti-meshd:
     github: "Forseti-Life/forseti-meshd"
     local_path: "/home/ubuntu/forseti.life/forseti-meshd"
