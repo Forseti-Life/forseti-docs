@@ -262,7 +262,7 @@ repositories:
     owning_dev: "dev-forseti"
     owning_qa: "qa-forseti"
     owning_security: "sec-analyst-forseti"
-    notes: "Canonical local checkout for the job_hunter module repository. Some legacy seat instructions still reference a separate dev-jobhunter flow and should be reconciled separately."
+    notes: "Canonical local checkout and source of truth for the job_hunter Drupal module. The live production module path `/var/www/html/forseti/web/modules/custom/job_hunter` resolves to this repo, while the HQ path `copilot-hq/sites/forseti/web/modules/custom/job_hunter` is a legacy compatibility tree and must not be treated as the primary authored source."
 
   forseti-jobhunter-tester:
     github: "Forseti-Life/forseti-jobhunter-tester"
@@ -279,7 +279,7 @@ repositories:
 
   forseti-job-hunter-drupal:
     github: "Forseti-Life/copilot-hq"
-    local_path: "/home/ubuntu/forseti.life/sites/forseti"
+    local_path: "/var/www/html/forseti"
     website_scope: "forseti.life"
     product_team: "forseti.life"
     repo_type: "site-instance"
@@ -288,7 +288,7 @@ repositories:
     owning_dev: "dev-forseti"
     owning_qa: "qa-forseti"
     owning_security: "sec-analyst-forseti"
-    notes: "Primary Forseti Drupal deployment target tracked separately in release operations."
+    notes: "Primary live Forseti Drupal site instance. For the `job_hunter` module, this site consumes the standalone repo `/home/ubuntu/forseti.life/forseti-job-hunter` via the symlink `/var/www/html/forseti/web/modules/custom/job_hunter`; do not treat the old `/home/ubuntu/forseti.life/sites/forseti` path or HQ compatibility tree as the module source of truth."
 
   forseti-theme:
     github: "Forseti-Life/forseti-theme"

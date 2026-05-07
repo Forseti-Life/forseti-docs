@@ -13,3 +13,8 @@ This directory is the canonical documentation home for
 `copilot-hq` keeps compatibility links at `runbooks/`, `knowledgebase/`, and
 `org-chart/ownership/` so the runtime and existing paths continue to work from
 the HQ checkout while this repo remains the source of truth.
+
+The managed repository workspace root is `/home/ubuntu/forseti.life`. The
+canonical HQ repo root is `/home/ubuntu/forseti.life/copilot-hq`, while product
+and module development should happen in the owning sibling repositories under
+`/home/ubuntu/forseti.life/*`.
