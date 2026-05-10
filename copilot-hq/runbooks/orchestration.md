@@ -30,10 +30,10 @@ orchestrator-loop.sh  (background daemon, every 60s)
        ├─ 3. pick_agents            all agents with inbox, CEO first (level=500)
        │
        ├─ 4. exec_agents            scripts/agent-exec-next.sh <agent>  [GenAI call]
-       │      ├─ local LLM (llm/runner.py) if model assigned in llm/routing.yaml
-       │      ├─ selected backend for Copilot-routed seats:
+       │      ├─ host-local llama-server (`local-server`) when routed/default
+       │      ├─ local LLM (llm/runner.py) if a manifest model ID is assigned and present
+       │      ├─ selected fallback backend:
        │      │    - Copilot CLI (`copilot --resume ...`) when `HQ_AGENTIC_BACKEND=copilot`
-       │      │    - Bedrock runner (`llm/bedrock_runner.py`) when `HQ_AGENTIC_BACKEND=bedrock`
        │      └─ on blocked/needs-info → creates sessions/<supervisor>/inbox/<escalation>/
        │           └─ if supervisor=board → inbox/commands/ via ceo-queue.sh
        │
@@ -172,23 +172,19 @@ DRUPAL_ROOT=/var/www/html/forseti ./scripts/bedrock-assist.sh forseti "Validate 
 ```
 
 ### LangGraph agent backend selection
-`scripts/agent-exec-next.sh` now supports selecting the generative backend for Copilot-routed agents.
+`scripts/agent-exec-next.sh` supports selecting the generative backend for agent execution.
 
 ```bash
 # default / normal production mode
-export HQ_AGENTIC_BACKEND=copilot
-
-# force Bedrock for the LangGraph agent execution path
-export HQ_AGENTIC_BACKEND=bedrock
+export HQ_AGENTIC_BACKEND=local-server
 
 # run one seat directly through the executor
 ./scripts/agent-exec-next.sh architect-copilot
 ```
 
 Notes:
-- Local LLM seats remain unchanged: local model first, then selected backend fallback.
-- LangGraph Bedrock execution goes through `scripts/agent-exec-next.sh` → `run_bedrock()` → `llm/bedrock_runner.py`.
-- The direct AWS Bedrock calls live in `llm/bedrock_runner.py` via `boto3.client("bedrock-runtime")`, then `client.converse(...)` or fallback `client.invoke_model(...)`.
+- Default production runtime is the host-local llama.cpp server at `http://127.0.0.1:8080`.
+- Manifest-routed GGUF seats still use the file-based local runner first, then selected backend fallback.
 - `scripts/bedrock-assist.sh` is a separate Drupal/operator wrapper that calls `ai_conversation.ai_api_service->invokeModelDirect(...)`; it is not the LangGraph agent executor path.
 - `drupal-langgraph/` does not directly invoke Bedrock; it reads HQ runtime artifacts from disk.
 
@@ -198,8 +194,6 @@ When tracing Bedrock usage for LangGraph automation, start here:
 | What you need | Path |
 |---|---|
 | Backend selection for agent seats | `scripts/agent-exec-next.sh` |
-| LangGraph executor Bedrock entrypoint | `scripts/agent-exec-next.sh` (`run_bedrock_raw`, `run_bedrock`) |
-| Direct AWS Bedrock API calls | `llm/bedrock_runner.py` |
 | Separate Drupal/operator Bedrock wrapper | `scripts/bedrock-assist.sh` |
 | HQ free-form wrapper over Drupal Bedrock | `scripts/hq-bedrock-chat.sh` |
 

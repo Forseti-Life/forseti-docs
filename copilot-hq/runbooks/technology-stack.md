@@ -118,10 +118,10 @@ What it does:
 - Determines the next inbox item for the seat.
 - Loads the seat’s instruction stack (org-wide → role → site → seat).
 - Selects a runtime provider:
-  - local LLM (if configured and model available)
-  - otherwise selected backend for Copilot-routed seats:
-    - Copilot CLI (default/auto when available)
-    - Bedrock via `scripts/bedrock-assist.sh` (when `HQ_AGENTIC_BACKEND=bedrock` or Copilot is unavailable in `auto` mode)
+  - host-local llama.cpp server (`local-server`, default)
+  - local LLM (`llm/runner.py`) if a manifest model is configured and present
+  - otherwise selected backend:
+    - Copilot CLI
 - Writes the outbox reply and any artifacts.
 
 ## Local LLM layer
@@ -131,6 +131,7 @@ Directory:
 Key files:
 - `llm/routing.yaml` — role/agent → model mapping
 - `llm/runner.py` — inference shim
+- `llm/genai_wrapper.py` — local-server / Copilot / Bedrock wrapper
 - `llm/model-manifest.yaml` — model catalog
 
 Dependencies:
@@ -139,7 +140,7 @@ Dependencies:
 - `pyyaml` for config
 
 Fallback:
-- If a model is assigned but missing, the executor falls back to the selected backend (`HQ_AGENTIC_BACKEND`: `auto|copilot|bedrock`).
+- If a routed local backend is unavailable, the executor falls back to the selected backend (`HQ_AGENTIC_BACKEND`: `local-server|copilot`).
 
 ## Quality automation (QA audits)
 
