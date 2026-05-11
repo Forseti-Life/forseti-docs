@@ -2,6 +2,28 @@
 
 > Update weekly. Track only a few metrics that drive behavior.
 
+## 2026-05-11 — production audit rerun / contact path failing
+
+| Metric | Target | Actual | Notes |
+|--------|--------|--------|-------|
+| Post-merge regressions | 0 | 1 | Fresh production audit `20260511-120454` found `/contact` returning HTTP 500 from the homepage CTA ("Express Interest in Membership"). This is the current live regression and aligns with the concurrent `webform` entity exception showing in Apache + watchdog logs. |
+| Reopen rate (issues/PRs) | < 10% | N/A | No PR tracker configured; reopened issue percentage is still not measurable from this workspace. |
+| Time-to-verify (median) | < 24h | same-day detection | QA audit evidence was refreshed the same day the issue was triaged by CEO; fresh artifacts now exist under `sessions/qa-forseti/artifacts/auto-site-audit/20260511-120454/`. |
+| Escaped defects (prod/user reported) | 0 | 1 | `/contact` is broken on production right now, so this counts as an escaped production defect even though the current evidence came from automated QA rather than a user report. |
+| Consecutive unclean releases (post-release QA) | 0 | 1 | Latest production audit is not clean: 1 failure and 1 permission expectation violation, both rooted in the same `/contact` 500. Counter remains at 1 until the path is repaired and the audit rerun is clean. |
+| Instructions-change proposals created | >= 1 when friction repeats | 0 | No new process proposal created yet; the current work is product bug triage rather than process remediation. |
+| Audit freshness | <= 24h | fresh (<1h) | Latest QA audit: `sessions/qa-forseti/artifacts/auto-site-audit/20260511-120454/` with stable pointer `sessions/qa-forseti/artifacts/auto-site-audit/latest/`. |
+
+**Current audit summary:**
+- FAIL counts: missing assets `0`, permission violations `1`, other failures `1`.
+- Current PM ACL question: `/index.php/jobhunter` returns 403 from `/about`; PM intent still needs confirmation on whether anon should reach that legacy path.
+- Current production error thread: Apache + watchdog show live `PluginNotFoundException` for missing `webform` entity type during `/contact` handling.
+
+**Open items carried forward:**
+- dev-forseti: `20260510-syshealth-webform-entity-exception`
+- dev-forseti: `20260510-syshealth-stale-feature-forseti-langgraph-console-admin`
+- dev-forseti: `20260510-syshealth-stale-feature-forseti-open-source-initiative`
+
 ## 2026-04-20 — forseti-release-q active / route fix deployed
 
 | Metric | Target | Actual | Notes |

@@ -2,6 +2,27 @@
 
 > Update weekly. Track only a few metrics that drive behavior.
 
+## 2026-05-11 — production audit rerun / clean with one PM ACL question
+
+| Metric | Target | Actual | Notes |
+|--------|--------|--------|-------|
+| Post-merge regressions | 0 | 0 | Fresh production audit `20260511-120506` found 0 missing assets, 0 permission violations, and 0 other failures. No current route or crawl regression was detected. |
+| Reopen rate (issues/PRs) | < 10% | N/A | No PR tracker configured; reopened issue percentage remains unmeasured in this workspace. |
+| Time-to-verify (median) | < 24h | same-day audit refresh | QA evidence was refreshed the same day the stale-audit warning was triaged; current artifacts live under `sessions/qa-dungeoncrawler/artifacts/auto-site-audit/20260511-120506/`. |
+| Escaped defects (prod/user reported) | 0 | 0 | No production failures were detected by the latest audit, and no new user-reported defects are recorded in this update window. |
+| Consecutive unclean releases (post-release QA) | 0 | 0 | Latest production audit is clean, so the counter remains at 0. |
+| Instructions-change proposals created | >= 1 when friction repeats | 0 | No new Dungeoncrawler-specific process proposal was needed in this refresh cycle. |
+| Audit freshness | <= 24h | fresh (<1h) | Latest QA audit: `sessions/qa-dungeoncrawler/artifacts/auto-site-audit/20260511-120506/` with stable pointer `sessions/qa-dungeoncrawler/artifacts/auto-site-audit/latest/`. |
+
+**Current audit summary:**
+- FAIL counts: missing assets `0`, permission violations `0`, other failures `0`.
+- PM ACL question remains open for `/charactersetup`, which returned 403 from the public `/how-to-play` flow; this is tracked as an intent decision rather than a regression.
+- Route audit summary is otherwise clean (`0` admin ACL leaks, `0` API route failures, `0` other route failures).
+
+**Open items carried forward:**
+- dev-dungeoncrawler: `20260510-syshealth-stale-feature-dc-arch-spell-feat-library-canon`
+- pm-dungeoncrawler: review whether `/charactersetup` should remain anon-denied or be made publicly reachable from `/how-to-play`
+
 ## 2026-04-18 — 20260412-dungeoncrawler-release-n healthy / push-ready
 
 | Metric | Target | Actual | Notes |
