@@ -240,6 +240,19 @@ repositories:
     owning_qa: "qa-forseti"
     owning_security: "sec-analyst-forseti"
 
+  forseti-tts:
+    github: "Forseti-Life/forseti-tts"
+    local_path: "/home/ubuntu/forseti.life/forseti-tts"
+    website_scope: "forseti.life"
+    product_team: "forseti.life"
+    repo_type: "submodule"
+    module: "forseti_tts"
+    owning_pm: "pm-forseti"
+    owning_dev: "dev-forseti"
+    owning_qa: "qa-forseti"
+    owning_security: "sec-analyst-forseti"
+    notes: "Canonical local checkout for the forseti_tts Drupal module repository."
+
   forseti-institutional-management:
     github: "Forseti-Life/forseti-institutional-management"
     local_path: "/home/ubuntu/forseti.life/forseti-institutional-management"
@@ -391,6 +404,19 @@ repositories:
     owning_qa: "qa-forseti"
     owning_security: "sec-analyst-forseti"
     notes: "Shared utility repo currently routed through the Forseti product team."
+
+  pixellab:
+    github: "Forseti-Life/pixellab"
+    local_path: "/home/ubuntu/forseti.life/pixellab"
+    website_scope: "forseti.life"
+    product_team: "forseti.life"
+    repo_type: "submodule"
+    module: "pixellab"
+    owning_pm: "pm-forseti"
+    owning_dev: "dev-forseti"
+    owning_qa: "qa-forseti"
+    owning_security: "sec-analyst-forseti"
+    notes: "Canonical local checkout for the pixellab Drupal module repository."
 
   thetruthperspective:
     github: "keithaumiller/thetruthperspective"
