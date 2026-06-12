@@ -433,6 +433,10 @@ Delegation rule:
 - Output: `sessions/<agent>/outbox/<item_id>.md`
 - Archived input: `sessions/<agent>/artifacts/<item_id>/...`
 
+LLM runtime policy (release + SDLC):
+- Executor runtime is local-only (`local-server` or local GGUF route from `llm/routing.yaml`).
+- External backup/fallback backends are disabled for release-management and SDLC execution.
+
 #### Parallel track: PM grooms the next release during Stage 3
 
 While Dev executes the current release, PM works the next release backlog in parallel.

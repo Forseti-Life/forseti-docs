@@ -3,8 +3,7 @@
 ## Purpose
 
 This runbook covers the full setup of the local LLM inference layer (`llm/`) on a new or
-upgraded machine. Follow this when storage and hardware are ready. Until then, all agents
-continue running on the Copilot CLI with zero changes required.
+upgraded machine. Follow this when storage and hardware are ready.
 
 ## Status Tracking
 
@@ -120,8 +119,8 @@ and whether that model file is present. Example output:
   agent-code-review                        tester               deepseek-coder            local [ready]
   agent-explore-forseti                    software-developer   phi-3-mini                local [ready]
   ba-forseti                               business-analyst     mistral-7b-instruct       local [not downloaded]
-  ceo-copilot                              ceo                  copilot                   copilot (external)
-  dev-forseti                              software-developer   copilot                   copilot (external)
+  ceo-copilot                              ceo                  local-server              local-server
+  dev-forseti                              software-developer   local-server              local-server
 ```
 
 ### Step 5 — Run a live inference test
@@ -169,14 +168,14 @@ Changes take effect immediately on the next agent execution. No restart needed.
 
 ---
 
-## Disabling Local LLM (Force Copilot for All Agents)
+## Disabling Local LLM (maintenance mode)
 
 ```bash
 export LLM_DISABLE=1
 ```
 
-Add to cron environment or `~/.bashrc` to make permanent. All agents will route to
-Copilot CLI regardless of routing.yaml.
+Add to cron environment or `~/.bashrc` only for temporary maintenance windows. With
+local-only policy, disabling local model routes will move agents to `local-server`.
 
 ---
 
@@ -200,7 +199,7 @@ export HF_TOKEN=your_token_here
 ./llm/download-models.sh phi-3-mini
 ```
 
-### Agent falls back to Copilot unexpectedly
+### Agent falls back to local-server unexpectedly
 1. Check model file is present: `./llm/validate.sh --agent <agent-id>`
 2. Check Python venv is activated or `LLM_PYTHON_BIN` is set
 3. Run runner directly to see errors:

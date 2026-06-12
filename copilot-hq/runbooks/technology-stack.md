@@ -18,7 +18,7 @@ The system is a set of cooperating layers:
 3) **Executor pipeline (runs exactly one unit of work for one agent)**
 - Entry point: `scripts/agent-exec-next.sh <agent-id>`
 - Uses locks to ensure “one agent, one item at a time”
-- Reads the agent’s instruction stack and the next inbox item, executes via runtime provider (local LLM, Copilot CLI, or Bedrock wrapper), and writes outbox/artifacts.
+- Reads the agent’s instruction stack and the next inbox item, executes via local runtime provider, and writes outbox/artifacts.
 
 4) **Publishing/visibility (dashboards)**
 - Publisher: `scripts/publish-forseti-agent-tracker.sh`
@@ -120,8 +120,6 @@ What it does:
 - Selects a runtime provider:
   - host-local llama.cpp server (`local-server`, default)
   - local LLM (`llm/runner.py`) if a manifest model is configured and present
-  - otherwise selected backend:
-    - Copilot CLI
 - Writes the outbox reply and any artifacts.
 
 ## Local LLM layer
@@ -131,7 +129,7 @@ Directory:
 Key files:
 - `llm/routing.yaml` — role/agent → model mapping
 - `llm/runner.py` — inference shim
-- `llm/genai_wrapper.py` — local-server / Copilot / Bedrock wrapper
+- `llm/genai_wrapper.py` — local-server + local model wrapper
 - `llm/model-manifest.yaml` — model catalog
 
 Dependencies:
@@ -139,8 +137,8 @@ Dependencies:
 - `huggingface_hub` for downloads
 - `pyyaml` for config
 
-Fallback:
-- If a routed local backend is unavailable, the executor falls back to the selected backend (`HQ_AGENTIC_BACKEND`: `local-server|copilot`).
+Policy:
+- HQ release-management and SDLC automation are local-only (`local-server` + local GGUF routes). External fallback backends are disabled.
 
 ## Quality automation (QA audits)
 
