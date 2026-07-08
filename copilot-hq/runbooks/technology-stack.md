@@ -31,7 +31,7 @@ The system is a set of cooperating layers:
 - Produces artifacts under QA seats and dispatches inbox items based on findings.
 
 6) **Operational control plane (on/off, convergence, watchdogs)**
-- Org kill-switch state file: `tmp/org-control.json` (gitignored)
+- Org kill-switch state file: `/var/tmp/copilot-sessions-hq/org-control.json` (legacy fallback: `tmp/org-control.json`)
 - CLI control: `scripts/org-control.sh`
 - Converge loop set: `scripts/hq-automation.sh`
 - 1-minute watchdog: `scripts/hq-automation-watchdog.sh` (+ cron installer)
@@ -154,7 +154,7 @@ Safety defaults:
 - Production auditing is blocked unless explicitly enabled (`ALLOW_PROD_QA=1`).
 
 Org control:
-- `site-audit-run.sh` respects `tmp/org-control.json` via `scripts/is-org-enabled.sh` (it exits early if org automation is disabled).
+- `site-audit-run.sh` respects org control via `scripts/is-org-enabled.sh` (default state file: `/var/tmp/copilot-sessions-hq/org-control.json`, legacy fallback: `tmp/org-control.json`).
 
 ## Publishing / dashboards
 
@@ -174,7 +174,7 @@ Purpose:
 
 ### Org kill-switch
 State file:
-- `tmp/org-control.json` (gitignored)
+- `/var/tmp/copilot-sessions-hq/org-control.json` (legacy fallback: `tmp/org-control.json`)
 
 CLI:
 - `scripts/org-control.sh status|enable|disable`

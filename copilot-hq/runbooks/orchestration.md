@@ -262,7 +262,7 @@ scripts/release-signoff-status.sh <release-id>
 | KPI monitor | `scripts/release-kpi-monitor.py` |
 | Telemetry publisher | `scripts/publish-forseti-agent-tracker.sh` |
 | Active release state | `tmp/release-cycle-active/` |
-| Org on/off switch | `tmp/org-control.json` / `scripts/is-org-enabled.sh` |
+| Org on/off switch | `/var/tmp/copilot-sessions-hq/org-control.json` (legacy fallback: `tmp/org-control.json`) / `scripts/is-org-enabled.sh` |
 
 ## Pre-merge safety gate (required for workspace snapshot merges)
 

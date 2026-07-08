@@ -219,7 +219,7 @@ This section is intentionally explicit: if two things disagree, the SoT below wi
 
 ### Org automation + convergence
 
-- Org on/off switch: `tmp/org-control.json`
+- Org on/off switch: `/var/tmp/copilot-sessions-hq/org-control.json` (legacy fallback: `tmp/org-control.json`)
 - Control command: `scripts/org-control.sh`
 - Read-only gate check: `scripts/is-org-enabled.sh`
 - Convergence/watchdog: `scripts/hq-automation.sh`, `scripts/hq-automation-watchdog.sh`

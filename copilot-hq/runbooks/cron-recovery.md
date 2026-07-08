@@ -7,23 +7,23 @@ A cron wipe causes all orchestration loops to stop silently. Without interventio
 
 ## Detecting a cron wipe
 
-### Symptom 1: No recent agent exec log entries
+### Symptom 1: No recent orchestrator log entries
 ```bash
-tail -20 /home/ubuntu/forseti.life/copilot-hq/inbox/responses/agent-exec-cron.log
-# If the last entry is >15 minutes old, the exec loop may be down.
+tail -20 /home/ubuntu/forseti.life/copilot-hq/inbox/responses/orchestrator-cron.log
+# If the last entry is >15 minutes old, orchestration may be down.
 ```
 
 ### Symptom 2: Loop verify fails
 ```bash
 bash /home/ubuntu/forseti.life/copilot-hq/scripts/orchestrator-loop.sh verify
-bash /home/ubuntu/forseti.life/copilot-hq/scripts/agent-exec-loop.sh verify
-# Both should print "ok (running pid ...)"
+bash /home/ubuntu/forseti.life/copilot-hq/scripts/hq-automation.sh status
+# Orchestrator should verify as running and HQ automation status should be healthy.
 ```
 
 ### Symptom 3: Crontab missing HQ entries
 ```bash
 crontab -l | grep copilot-sessions-hq
-# Should return 8 lines. If 0 or fewer — the cron table was wiped.
+# Should return the managed HQ entries (currently 5). If 0 or fewer — the cron table was wiped.
 ```
 
 ### Symptom 4: Alert log exists
@@ -40,7 +40,7 @@ Run the idempotent installer (safe to run multiple times):
 bash /home/ubuntu/forseti.life/copilot-hq/scripts/install-crons.sh
 ```
 
-This installs all 8 required HQ cron entries without duplicating existing ones.
+This installs the required managed HQ cron entries (currently 5) without duplicating existing ones.
 
 ## Recovery: verify all loops are healthy
 
@@ -53,7 +53,7 @@ bash /home/ubuntu/forseti.life/copilot-hq/scripts/hq-health-heartbeat.sh
 You can also check loop status directly:
 ```bash
 bash /home/ubuntu/forseti.life/copilot-hq/scripts/orchestrator-loop.sh status
-bash /home/ubuntu/forseti.life/copilot-hq/scripts/agent-exec-loop.sh status
+bash /home/ubuntu/forseti.life/copilot-hq/scripts/hq-automation.sh status
 ```
 
 ## Recovery: manual loop restart (if heartbeat restart failed)
@@ -61,21 +61,19 @@ bash /home/ubuntu/forseti.life/copilot-hq/scripts/agent-exec-loop.sh status
 ```bash
 cd /home/ubuntu/forseti.life/copilot-hq
 ORCHESTRATOR_AGENT_CAP=6 bash scripts/orchestrator-loop.sh start 60
-bash scripts/agent-exec-loop.sh start 60
+bash scripts/hq-automation.sh converge
 ```
 
 ## Required HQ cron entries (reference)
 
-These are the 8 entries managed by `scripts/install-crons.sh`:
+These are the managed entries from `scripts/install-crons.sh` (currently 5):
 
 | Tag | Schedule | Purpose |
 |---|---|---|
 | `orchestrator-reboot` | `@reboot` | Start orchestrator loop on boot |
 | `orchestrator-watchdog` | `*/5 * * * *` | Restart orchestrator if down |
-| `agent-exec-reboot` | `@reboot` | Start agent exec loop on boot |
-| `agent-exec-watchdog` | `*/5 * * * *` | Restart agent exec loop if down |
 | `hq-automation` | `* * * * *` | Converge HQ automation state |
-| `ceo-ops` | `0 */2 * * *` | CEO scheduled quality check |
+| `ceo-ops` | `*/10 * * * *` | CEO scheduled quality check |
 | `hq-health-heartbeat` | `*/2 * * * *` | Self-healing heartbeat + alert log |
 
 `auto-checkpoint` has **no direct cron entry** and is **disabled by policy**. `hq-automation-watchdog` should not restart `auto-checkpoint-loop.sh`.
