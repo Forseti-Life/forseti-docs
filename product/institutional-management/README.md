@@ -1,8 +1,9 @@
+<!-- REVIEWED: 2026-07-14 -->
 # Institutional Management Documentation
 
 **Product**: Forseti Institutional Management  
-**Last Updated**: January 10, 2026  
-**Status**: 🟡 Design & Planning Phase
+
+
 
 ---
 
@@ -272,3 +273,10 @@ Contact: [support@forseti.life](mailto:support@forseti.life)
 **Last Updated**: January 10, 2026  
 **Version**: 1.0  
 **Status**: Active Development Planning
+
+## Scope covered by this document
+
+- **Primary target:** `product/institutional-management/README.md`
+- **Purpose:** the purpose of the `institutional-management` directory
+- **Nearby directories:** `roles-permissions`, `workflows`
+- **Nearby files:** `business-entity-types.md`, `implementation-plan.md`, `institution-types.md`, `mvp.md`, `technical-specification.md`
