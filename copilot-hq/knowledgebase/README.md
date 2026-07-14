@@ -1,3 +1,4 @@
+<!-- REVIEWED: 2026-07-14 -->
 # Continuous Improvement Knowledgebase
 
 This is a shared, cross-agent learning system for capturing mistakes, regressions, and improvements.
