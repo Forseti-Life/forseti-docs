@@ -1,7 +1,6 @@
+<!-- REVIEWED: 2026-07-14 -->
 # Forseti/AmISafe - Navigation & User Experience Design
 
-**Last Updated**: February 12, 2026  
-**Status**: 🎨 Design Documentation  
 **Phase**: Beta Testing (Phase 4/5)
 
 ---
@@ -314,3 +313,9 @@ For questions about design decisions or to contribute:
 - Reference specific design principles
 - Consider user impact and accessibility
 - Align with mobile-first approach
+
+## Scope covered by this document
+
+- **Primary target:** `product/design/README.md`
+- **Purpose:** the purpose of the `design` directory
+- **Nearby files:** `01-sitemap-navigation.md`, `02-wireframes.md`, `03-user-flows.md`, `04-mobile-first-approach.md`, `05-accessibility-checklist.md`, `06-performance-strategy.md`
