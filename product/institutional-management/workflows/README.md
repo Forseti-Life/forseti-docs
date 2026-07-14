@@ -1,7 +1,5 @@
+<!-- REVIEWED: 2026-07-14 -->
 # Institutional Management Workflows
-
-**Last Updated**: January 10, 2026  
-**Status**: 🟡 In Development
 
 ---
 
@@ -101,3 +99,9 @@ Each workflow document should include:
 
 **Maintained By**: Product Team  
 **Review Frequency**: Weekly during development
+
+## Scope covered by this document
+
+- **Primary target:** `product/institutional-management/workflows/README.md`
+- **Purpose:** the purpose of the `workflows` directory
+- **Nearby files:** `founder-journey.md`, `institution-onboarding.md`
