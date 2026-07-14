@@ -1,7 +1,6 @@
+<!-- REVIEWED: 2026-07-14 -->
 # Forseti Product Documentation
 
-**Last Updated**: December 13, 2024  
-**Status**: 🟢 Live Beta Testing  
 **Methodology**: Lean Startup (Eric Ries)
 
 ---
@@ -359,4 +358,3 @@ Review data and decide on strategy.
 | Date | Change | Author |
 |------|--------|--------|
 | 2024-12-13 | Initial framework setup | Keith Aumiller |
-
