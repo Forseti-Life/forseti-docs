@@ -1,4 +1,4 @@
-<!-- REVIEWED: 2026-07-14 -->
+<!-- REVIEWED: 2026-07-15 -->
 # Institutional Management Workflows
 
 ---
@@ -105,3 +105,12 @@ Each workflow document should include:
 - **Primary target:** `product/institutional-management/workflows/README.md`
 - **Purpose:** the purpose of the `workflows` directory
 - **Nearby files:** `founder-journey.md`, `institution-onboarding.md`
+
+## Agentic Development Readiness
+
+- **Quick start:** Read `product/institutional-management/workflows/README.md` and capture the current scope before editing. Cross-check `product/institutional-management/workflows/founder-journey.md` to align terms, boundaries, and linked issue context. Align with parent context in `product/institutional-management/README.md` before finalizing the readiness block.
+- **Key entry points:** `product/institutional-management/workflows/founder-journey.md`, `product/institutional-management/workflows/institution-onboarding.md`
+- **Verification:** Run `git --no-pager grep -n "## Agentic Development Readiness" "product/institutional-management/workflows/README.md"`; then run `git --no-pager grep -n "^#" "product/institutional-management/workflows/founder-journey.md"`.
+- **Source of truth:** Treat the checked-in code and documentation under this component directory as the authoritative reference before updating adjacent layers.
+- **Constraints / gotchas:** ### Phase 1: Must-Have (MVP).
+- **Architecture map:** `product/institutional-management/workflows/README.md`, `product/institutional-management/workflows/founder-journey.md`, `product/institutional-management/workflows/institution-onboarding.md`

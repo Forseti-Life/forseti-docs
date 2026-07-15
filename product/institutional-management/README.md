@@ -1,7 +1,9 @@
-<!-- REVIEWED: 2026-07-14 -->
+<!-- REVIEWED: 2026-07-15 -->
 # Institutional Management Documentation
 
 **Product**: Forseti Institutional Management  
+
+
 
 
 
@@ -280,3 +282,8 @@ Contact: [support@forseti.life](mailto:support@forseti.life)
 - **Purpose:** the purpose of the `institutional-management` directory
 - **Nearby directories:** `roles-permissions`, `workflows`
 - **Nearby files:** `business-entity-types.md`, `implementation-plan.md`, `institution-types.md`, `mvp.md`, `technical-specification.md`
+
+## Agentic Development Readiness
+
+- **Key entry points:** `product/institutional-management/README.md`
+- **Source of truth:** Treat the checked-in code and documentation under this component directory as the authoritative reference before updating adjacent layers.
