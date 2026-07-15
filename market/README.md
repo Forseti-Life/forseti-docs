@@ -1,4 +1,4 @@
-<!-- REVIEWED: 2026-07-14 -->
+<!-- REVIEWED: 2026-07-15 -->
 # Market Documentation
 
 ---
@@ -285,3 +285,12 @@ Different approaches customers use instead of any dedicated solution.
 - **Primary target:** `market/README.md`
 - **Purpose:** the purpose of the `market` directory
 - **Nearby directories:** `Marketing documents`
+
+## Agentic Development Readiness
+
+- **Quick start:** Read `market/README.md` and capture the current scope before editing. Cross-check `README.md` to align terms, boundaries, and linked issue context. Validate repository-level consistency against `README.md` before publishing.
+- **Key entry points:** `README.md`, `ARCHITECTURE.md`, `market/Marketing documents/Philadelphiaentrepreneurship.md`, `copilot-hq/README.md`
+- **Verification:** Run `git --no-pager grep -n "## Agentic Development Readiness" "market/README.md"`; then run `git --no-pager grep -n "^#" "README.md"`.
+- **Source of truth:** repository is the source of truth for their content.
+- **Constraints / gotchas:** # Critical files (read-only).
+- **Architecture map:** `market/README.md`, `README.md`, `ARCHITECTURE.md`, `market/Marketing documents/Philadelphiaentrepreneurship.md`, `copilot-hq/README.md`
