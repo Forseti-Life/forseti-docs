@@ -1,3 +1,4 @@
+<!-- REVIEWED: 2026-07-15 -->
 # JobHunter Requirements — Index
 
 **Module:** `job_hunter` (forseti.life)  
@@ -45,3 +46,9 @@ The JobHunter module is a Drupal 10 custom module that automates the end-to-end 
 - `docs/COMPANY_RESEARCH_PATH_DESIGN.md` — design for unimplemented company research automation
 - `docs/JOB_TAILORING_DESIGN.md` — AI tailoring design
 - `docs/ERROR_QUEUE_IMPLEMENTATION.md` — error queue design notes
+
+## Agentic Development Readiness
+
+- **Quick start:** Start with this README, then inspect the local architecture and install guides before changing code.
+- **Verification:** Run the narrowest existing tests or validation commands that exercise this component before marking work complete.
+- **Source of truth:** Treat the checked-in code and documentation under this component directory as the authoritative reference before updating adjacent layers.
