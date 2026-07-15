@@ -185,6 +185,6 @@ When adding new design documents:
 - **Quick start:** Read `dungeoncrawler/issues/README.md` and nearby issue/spec docs before editing. Review `dungeoncrawler/issues/combat-action-validation.md` for adjacent context and dependencies. Run `git --no-pager grep -n "## Agentic Development Readiness" "dungeoncrawler/issues/README.md"` to verify the documented behavior.
 - **Key entry points:** `dungeoncrawler/issues/combat-action-validation.md`, `dungeoncrawler/issues/combat-api-endpoints.md`, `dungeoncrawler/issues/combat-database-schema.md`, `dungeoncrawler/issues/combat-engine-service.md`
 - **Verification:** Run `git --no-pager grep -n "## Agentic Development Readiness" "dungeoncrawler/issues/README.md"`.
-- **Source of truth:** - **Source of truth:** Treat the checked-in code and documentation under this component directory as the authoritative reference before updating adjacent layers.
+- **Source of truth:** Treat the checked-in code and documentation under this component directory as the authoritative reference before updating adjacent layers.
 - **Constraints / gotchas:** **Rule 1.1: Combat Must Be Active**
 - **Architecture map:** `dungeoncrawler/issues/README.md`, `dungeoncrawler/issues/combat-action-validation.md`, `dungeoncrawler/issues/combat-api-endpoints.md`, `dungeoncrawler/issues/combat-database-schema.md`, `dungeoncrawler/issues/combat-engine-service.md`
