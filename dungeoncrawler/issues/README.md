@@ -1,3 +1,4 @@
+<!-- REVIEWED: 2026-07-15 -->
 # Design Issues
 
 This directory contains design documents for major features in the Pathfinder 2E Dungeon Crawler system.
@@ -178,3 +179,8 @@ When adding new design documents:
 ---
 
 **Last Updated**: 2026-04-18
+
+## Agentic Development Readiness
+
+- **Quick start:** Start with this README, then inspect the local architecture and install guides before changing code.
+- **Source of truth:** Treat the checked-in code and documentation under this component directory as the authoritative reference before updating adjacent layers.
