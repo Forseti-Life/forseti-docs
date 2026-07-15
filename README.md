@@ -645,6 +645,6 @@ For additional documentation:
 - **Quick start:** Read `README.md` and capture the current scope before editing. Cross-check `ARCHITECTURE.md` to align terms, boundaries, and linked issue context. Validate repository-level consistency against `ARCHITECTURE.md` before publishing.
 - **Key entry points:** `ARCHITECTURE.md`, `copilot-hq/README.md`, `dungeoncrawler/README.md`, `market/README.md`
 - **Verification:** Run `git --no-pager grep -n "## Agentic Development Readiness" "README.md"`; then run `git --no-pager grep -n "^#" "ARCHITECTURE.md"`.
-- **Source of truth:** Canonical documentation for `Forseti-Life/copilot-hq` now lives here, including:
+- **Source of truth:** repository is the source of truth for their content.
 - **Constraints / gotchas:** # Critical files (read-only).
 - **Architecture map:** `README.md`, `ARCHITECTURE.md`, `copilot-hq/README.md`, `dungeoncrawler/README.md`, `market/README.md`
