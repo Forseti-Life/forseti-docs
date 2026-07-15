@@ -82,8 +82,9 @@ When creating new user journeys, include:
 
 ## Agentic Development Readiness
 
-- **Quick start:** Start with this README, then inspect the local architecture and install guides before changing code.
-- **Key entry points:** `product/user-journey/README.md`
+- **Quick start:** Read `product/user-journey/README.md` and capture the current scope before editing. Cross-check `product/user-journey/sarah-urban-commuter.md` to align terms, boundaries, and linked issue context. Align with parent context in `product/README.md` before finalizing the readiness block.
+- **Key entry points:** `product/user-journey/sarah-urban-commuter.md`, `product/README.md`, `README.md`, `ARCHITECTURE.md`
+- **Verification:** Run `git --no-pager grep -n "## Agentic Development Readiness" "product/user-journey/README.md"`; then run `git --no-pager grep -n "^#" "product/user-journey/sarah-urban-commuter.md"`.
 - **Source of truth:** Treat the checked-in code and documentation under this component directory as the authoritative reference before updating adjacent layers.
-- **Constraints / gotchas:** Preserve existing module boundaries, reuse local documentation and test surfaces, and avoid broad cross-repo assumptions without evidence from this subtree.
-- **Architecture map:** Document the core runtime, source, and documentation entry points for this component.
+- **Constraints / gotchas:** **Constraints / gotchas:** [ ] Notifications work in Do Not Disturb mode (critical alert option).
+- **Architecture map:** `product/user-journey/README.md`, `product/user-journey/sarah-urban-commuter.md`, `product/README.md`, `README.md`, `ARCHITECTURE.md`
