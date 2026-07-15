@@ -1,4 +1,4 @@
-<!-- REVIEWED: 2026-07-14 -->
+<!-- REVIEWED: 2026-07-15 -->
 # Metrics
 
 ---
@@ -354,3 +354,12 @@ The **single metric** that best captures the core value you deliver to customers
 - **Primary target:** `product/metrics/README.md`
 - **Purpose:** the purpose of the `metrics` directory
 - **Nearby files:** `cohort-analysis.md`, `key-metrics-dashboard.md`, `pirate-metrics.md`
+
+## Agentic Development Readiness
+
+- **Quick start:** Read `product/metrics/README.md` and capture the current scope before editing. Cross-check `product/metrics/cohort-analysis.md` to align terms, boundaries, and linked issue context. Align with parent context in `product/README.md` before finalizing the readiness block.
+- **Key entry points:** `product/metrics/cohort-analysis.md`, `product/metrics/key-metrics-dashboard.md`, `product/metrics/pirate-metrics.md`
+- **Verification:** Run `git --no-pager grep -n "## Agentic Development Readiness" "product/metrics/README.md"`; then run `git --no-pager grep -n "^#" "product/metrics/cohort-analysis.md"`.
+- **Source of truth:** Treat the checked-in code and documentation under this component directory as the authoritative reference before updating adjacent layers.
+- **Constraints / gotchas:** **Purpose**: Central dashboard for all critical metrics.
+- **Architecture map:** `product/metrics/README.md`, `product/metrics/cohort-analysis.md`, `product/metrics/key-metrics-dashboard.md`, `product/metrics/pirate-metrics.md`
