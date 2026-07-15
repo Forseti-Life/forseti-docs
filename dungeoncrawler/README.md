@@ -333,4 +333,9 @@ Found an error or have suggestions? Please:
 
 ## Agentic Development Readiness
 
+- **Quick start:** Read `dungeoncrawler/README.md` and capture the current scope before editing. Cross-check `dungeoncrawler/01-character-creation-process.md` to align terms, boundaries, and linked issue context. Validate repository-level consistency against `README.md` before publishing.
+- **Key entry points:** `dungeoncrawler/01-character-creation-process.md`, `dungeoncrawler/02-combat-encounter-mechanics.md`, `dungeoncrawler/03-action-system.md`, `dungeoncrawler/04-skill-checks.md`
+- **Verification:** Run `git --no-pager grep -n "## Agentic Development Readiness" "dungeoncrawler/README.md"`; then run `git --no-pager grep -n "^#" "dungeoncrawler/01-character-creation-process.md"`.
 - **Source of truth:** Treat the checked-in code and documentation under this component directory as the authoritative reference before updating adjacent layers.
+- **Constraints / gotchas:** Must complete **multi-action activities** on same turn.
+- **Architecture map:** `dungeoncrawler/README.md`, `dungeoncrawler/01-character-creation-process.md`, `dungeoncrawler/02-combat-encounter-mechanics.md`, `dungeoncrawler/03-action-system.md`, `dungeoncrawler/04-skill-checks.md`
