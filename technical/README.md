@@ -1,7 +1,6 @@
 <!-- REVIEWED: 2026-07-15 -->
 # Technical Documentation
 
-
 ---
 
 ## Overview
@@ -310,4 +309,9 @@ GET /api/amisafe/aggregated
 
 ## Agentic Development Readiness
 
+- **Quick start:** Read `technical/README.md` and capture the current scope before editing. Cross-check `technical/CORRELATION_ANALYSIS_USER_GUIDE.md` to align terms, boundaries, and linked issue context. Validate repository-level consistency against `README.md` before publishing.
+- **Key entry points:** `technical/CORRELATION_ANALYSIS_USER_GUIDE.md`, `technical/DEPLOYMENT.md`, `technical/DEVELOPMENT_SYNC_WORKFLOW.md`, `technical/GOOGLE_ANALYTICS_SETUP.md`
+- **Verification:** Run `git --no-pager grep -n "## Agentic Development Readiness" "technical/README.md"`; then run `git --no-pager grep -n "^#" "technical/CORRELATION_ANALYSIS_USER_GUIDE.md"`.
 - **Source of truth:** Treat the checked-in code and documentation under this component directory as the authoritative reference before updating adjacent layers.
+- **Constraints / gotchas:** `lat` (required): Latitude (decimal).
+- **Architecture map:** `technical/README.md`, `technical/CORRELATION_ANALYSIS_USER_GUIDE.md`, `technical/DEPLOYMENT.md`, `technical/DEVELOPMENT_SYNC_WORKFLOW.md`, `technical/GOOGLE_ANALYTICS_SETUP.md`
