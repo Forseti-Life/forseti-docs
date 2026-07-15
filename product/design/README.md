@@ -1,7 +1,8 @@
-<!-- REVIEWED: 2026-07-14 -->
+<!-- REVIEWED: 2026-07-15 -->
 # Forseti/AmISafe - Navigation & User Experience Design
 
 **Phase**: Beta Testing (Phase 4/5)
+
 
 ---
 
@@ -319,3 +320,12 @@ For questions about design decisions or to contribute:
 - **Primary target:** `product/design/README.md`
 - **Purpose:** the purpose of the `design` directory
 - **Nearby files:** `01-sitemap-navigation.md`, `02-wireframes.md`, `03-user-flows.md`, `04-mobile-first-approach.md`, `05-accessibility-checklist.md`, `06-performance-strategy.md`
+
+## Agentic Development Readiness
+
+- **Quick start:** Read `product/design/README.md` and capture the current scope before editing. Cross-check `product/design/01-sitemap-navigation.md` to align terms, boundaries, and linked issue context. Align with parent context in `product/README.md` before finalizing the readiness block.
+- **Key entry points:** `product/design/01-sitemap-navigation.md`, `product/design/02-wireframes.md`, `product/design/03-user-flows.md`, `product/design/04-mobile-first-approach.md`
+- **Verification:** Run `git --no-pager grep -n "## Agentic Development Readiness" "product/design/README.md"`; then run `git --no-pager grep -n "^#" "product/design/01-sitemap-navigation.md"`.
+- **Source of truth:** Treat the checked-in code and documentation under this component directory as the authoritative reference before updating adjacent layers.
+- **Constraints / gotchas:** This document outlines the complete information architecture and navigation structure for Forseti/AmISafe across both mobile and web platforms. The design prioritizes immediate access to critical safety information while maintaining a clear, intuitive hierarchy.
+- **Architecture map:** `product/design/README.md`, `product/design/01-sitemap-navigation.md`, `product/design/02-wireframes.md`, `product/design/03-user-flows.md`, `product/design/04-mobile-first-approach.md`
