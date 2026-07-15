@@ -1,7 +1,6 @@
+<!-- REVIEWED: 2026-07-15 -->
 # Technical Documentation
 
-**Last Updated**: 2024-12-13  
-**Status**: 🟡 Organized
 
 ---
 
@@ -309,3 +308,6 @@ GET /api/amisafe/aggregated
 ### Community
 - [To be documented]
 
+## Agentic Development Readiness
+
+- **Source of truth:** Treat the checked-in code and documentation under this component directory as the authoritative reference before updating adjacent layers.
