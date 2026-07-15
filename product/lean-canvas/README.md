@@ -1,7 +1,6 @@
+<!-- REVIEWED: 2026-07-15 -->
 # Lean Canvas
 
-**Last Updated**: December 13, 2024  
-**Status**: 🟡 Draft - Requires Validation
 
 ---
 
@@ -279,3 +278,11 @@ Canvas should evolve as you learn.
 - Clear product-market fit signals
 - Proven business model fundamentals
 - Ready to scale customer acquisition
+
+## Agentic Development Readiness
+
+- **Quick start:** Start with this README, then inspect the local architecture and install guides before changing code.
+- **Key entry points:** `product/lean-canvas/README.md`
+- **Verification:** Run the narrowest existing tests or validation commands that exercise this component before marking work complete.
+- **Source of truth:** Treat the checked-in code and documentation under this component directory as the authoritative reference before updating adjacent layers.
+- **Architecture map:** Document the core runtime, source, and documentation entry points for this component.
