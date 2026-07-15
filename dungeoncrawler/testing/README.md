@@ -1,3 +1,4 @@
+<!-- REVIEWED: 2026-07-15 -->
 # Dungeon Crawler Testing Guide
 
 Quick start guide for developers working with the Dungeon Crawler testing suite.
@@ -389,3 +390,8 @@ public function testAbilityBoostRules(): void {
 ---
 
 **Happy Testing!** Remember: Good tests make confident developers. 🚀
+
+## Agentic Development Readiness
+
+- **Source of truth:** Treat the checked-in code and documentation under this component directory as the authoritative reference before updating adjacent layers.
+- **Constraints / gotchas:** Preserve existing module boundaries, reuse local documentation and test surfaces, and avoid broad cross-repo assumptions without evidence from this subtree.
