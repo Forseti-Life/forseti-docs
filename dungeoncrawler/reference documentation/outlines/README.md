@@ -1,3 +1,4 @@
+<!-- REVIEWED: 2026-07-15 -->
 # PF2E Reference Documentation Outlines - Index
 
 This directory contains detailed outlines for all Pathfinder Second Edition reference documentation .txt files located in `docs/dungeoncrawler/reference documentation/`.
@@ -87,3 +88,10 @@ These outlines were generated from the text file versions of the PDF documents. 
 *Created*: 2026-02-14
 *Source Directory*: `docs/dungeoncrawler/reference documentation/`
 *Methodology*: See METHODOLOGY.md
+
+## Agentic Development Readiness
+
+- **Quick start:** Start with this README, then inspect the local architecture and install guides before changing code.
+- **Key entry points:** `dungeoncrawler/reference documentation/outlines/README.md`
+- **Verification:** Run the narrowest existing tests or validation commands that exercise this component before marking work complete.
+- **Source of truth:** Treat the checked-in code and documentation under this component directory as the authoritative reference before updating adjacent layers.
