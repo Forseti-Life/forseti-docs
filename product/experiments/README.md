@@ -1,7 +1,6 @@
+<!-- REVIEWED: 2026-07-15 -->
 # Experiments
 
-**Last Updated**: December 13, 2024  
-**Status**: 🟡 Template Ready - Active Experimentation Needed
 
 ---
 
@@ -280,3 +279,10 @@ will achieve [outcome]. We'll know we're right when we see [signal].
 - Clear pattern of validated/invalidated hypotheses
 - Data-driven product roadmap
 - Systematic approach to learning and iteration
+
+## Agentic Development Readiness
+
+- **Quick start:** Start with this README, then inspect the local architecture and install guides before changing code.
+- **Key entry points:** `product/experiments/README.md`
+- **Source of truth:** Treat the checked-in code and documentation under this component directory as the authoritative reference before updating adjacent layers.
+- **Constraints / gotchas:** Preserve existing module boundaries, reuse local documentation and test surfaces, and avoid broad cross-repo assumptions without evidence from this subtree.
