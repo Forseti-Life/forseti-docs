@@ -393,9 +393,9 @@ public function testAbilityBoostRules(): void {
 
 ## Agentic Development Readiness
 
-- **Quick start:** From `sites/dungeoncrawler`, run `composer install` once and execute `./vendor/bin/phpunit --testsuite=unit` before broader suites.
-- **Key entry points:** Use `sites/dungeoncrawler/web/modules/custom/dungeoncrawler_content/tests/` for test source, `sites/dungeoncrawler/web/modules/custom/dungeoncrawler_content/tests/fixtures/` for shared fixture data, and `dungeoncrawler/issues/issue-testing-strategy-design.md` for test strategy context.
-- **Verification:** Verify changes by running `./vendor/bin/phpunit --configuration web/core/phpunit.xml.dist`, then run a targeted suite such as `./vendor/bin/phpunit --testsuite=functional` for touched flows.
+- **Quick start:** Read `dungeoncrawler/testing/README.md` and capture the current scope before editing. Cross-check `dungeoncrawler/README.md` to align terms, boundaries, and linked issue context. Align with parent context in `dungeoncrawler/README.md` before finalizing the readiness block.
+- **Key entry points:** `dungeoncrawler/README.md`, `README.md`, `ARCHITECTURE.md`, `dungeoncrawler/issues/README.md`
+- **Verification:** Run `git --no-pager grep -n "## Agentic Development Readiness" "dungeoncrawler/testing/README.md"`; then run `git --no-pager grep -n "^#" "dungeoncrawler/README.md"`.
 - **Source of truth:** Treat the checked-in code and documentation under this component directory as the authoritative reference before updating adjacent layers.
-- **Constraints / gotchas:** Preserve existing module boundaries, reuse local documentation and test surfaces, and avoid broad cross-repo assumptions without evidence from this subtree.
-- **Architecture map:** Testing docs live in `dungeoncrawler/testing/README.md`, strategy context is in `dungeoncrawler/issues/issue-testing-strategy-design.md`, and executable tests live under `sites/dungeoncrawler/web/modules/custom/dungeoncrawler_content/tests/`.
+- **Constraints / gotchas:** - Degrees of success (critical success through critical failure)
+- **Architecture map:** `dungeoncrawler/testing/README.md`, `dungeoncrawler/README.md`, `README.md`, `ARCHITECTURE.md`, `dungeoncrawler/issues/README.md`
