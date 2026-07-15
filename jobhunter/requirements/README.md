@@ -49,6 +49,9 @@ The JobHunter module is a Drupal 10 custom module that automates the end-to-end 
 
 ## Agentic Development Readiness
 
-- **Quick start:** Start with this README, then inspect the local architecture and install guides before changing code.
-- **Verification:** Run the narrowest existing tests or validation commands that exercise this component before marking work complete.
+- **Quick start:** Read `jobhunter/requirements/README.md` and capture the current scope before editing. Cross-check `jobhunter/requirements/jh-01-user-profile-resume.md` to align terms, boundaries, and linked issue context. Validate repository-level consistency against `README.md` before publishing.
+- **Key entry points:** `jobhunter/requirements/jh-01-user-profile-resume.md`, `jobhunter/requirements/jh-02-job-discovery.md`, `jobhunter/requirements/jh-03-resume-tailoring.md`, `jobhunter/requirements/jh-04-application-tracking.md`
+- **Verification:** Run `git --no-pager grep -n "## Agentic Development Readiness" "jobhunter/requirements/README.md"`; then run `git --no-pager grep -n "^#" "jobhunter/requirements/jh-01-user-profile-resume.md"`.
 - **Source of truth:** Treat the checked-in code and documentation under this component directory as the authoritative reference before updating adjacent layers.
+- **Constraints / gotchas:** The system must allow an authenticated user to upload one or more resume files in PDF or DOCX format.
+- **Architecture map:** `jobhunter/requirements/README.md`, `jobhunter/requirements/jh-01-user-profile-resume.md`, `jobhunter/requirements/jh-02-job-discovery.md`, `jobhunter/requirements/jh-03-resume-tailoring.md`, `jobhunter/requirements/jh-04-application-tracking.md`
