@@ -1,7 +1,6 @@
 <!-- REVIEWED: 2026-07-15 -->
 # MVP (Minimum Viable Product)
 
-
 ---
 
 ## Purpose
@@ -355,6 +354,9 @@ Interactive safety map with H3 hexagon visualization + background location monit
 
 ## Agentic Development Readiness
 
-- **Quick start:** Start with this README, then inspect the local architecture and install guides before changing code.
-- **Key entry points:** `product/mvp/README.md`
+- **Quick start:** Read `product/mvp/README.md` and capture the current scope before editing. Cross-check `product/mvp/feature-prioritization.md` to align terms, boundaries, and linked issue context. Align with parent context in `product/README.md` before finalizing the readiness block.
+- **Key entry points:** `product/mvp/feature-prioritization.md`, `product/mvp/mvp-definition.md`
+- **Verification:** Run `git --no-pager grep -n "## Agentic Development Readiness" "product/mvp/README.md"`; then run `git --no-pager grep -n "^#" "product/mvp/feature-prioritization.md"`.
 - **Source of truth:** Treat the checked-in code and documentation under this component directory as the authoritative reference before updating adjacent layers.
+- **Constraints / gotchas:** MVP feature set (must-have vs. nice-to-have vs. post-MVP).
+- **Architecture map:** `product/mvp/README.md`, `product/mvp/feature-prioritization.md`, `product/mvp/mvp-definition.md`
