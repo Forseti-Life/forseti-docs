@@ -1,3 +1,4 @@
+<!-- REVIEWED: 2026-07-15 -->
 # Dungeon Crawler Forseti Life Documentation Hub
 
 This directory contains player reference material, system design notes, and implementation documentation for Dungeon Crawler Forseti Life.
@@ -329,3 +330,7 @@ Found an error or have suggestions? Please:
 ---
 
 **Happy Gaming!** May your dice roll high and your adventures be legendary.
+
+## Agentic Development Readiness
+
+- **Source of truth:** Treat the checked-in code and documentation under this component directory as the authoritative reference before updating adjacent layers.
