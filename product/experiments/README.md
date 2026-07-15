@@ -1,7 +1,6 @@
 <!-- REVIEWED: 2026-07-15 -->
 # Experiments
 
-
 ---
 
 ## Purpose
@@ -282,7 +281,9 @@ will achieve [outcome]. We'll know we're right when we see [signal].
 
 ## Agentic Development Readiness
 
-- **Quick start:** Start with this README, then inspect the local architecture and install guides before changing code.
-- **Key entry points:** `product/experiments/README.md`
+- **Quick start:** Read `product/experiments/README.md` and capture the current scope before editing. Cross-check `product/experiments/experiment-log.md` to align terms, boundaries, and linked issue context. Align with parent context in `product/README.md` before finalizing the readiness block.
+- **Key entry points:** `product/experiments/experiment-log.md`, `product/experiments/pivot-decisions.md`
+- **Verification:** Run `git --no-pager grep -n "## Agentic Development Readiness" "product/experiments/README.md"`; then run `git --no-pager grep -n "^#" "product/experiments/experiment-log.md"`.
 - **Source of truth:** Treat the checked-in code and documentation under this component directory as the authoritative reference before updating adjacent layers.
-- **Constraints / gotchas:** Preserve existing module boundaries, reuse local documentation and test surfaces, and avoid broad cross-repo assumptions without evidence from this subtree.
+- **Constraints / gotchas:** [ ] Users say "nice to have" but not "must have".
+- **Architecture map:** `product/experiments/README.md`, `product/experiments/experiment-log.md`, `product/experiments/pivot-decisions.md`
