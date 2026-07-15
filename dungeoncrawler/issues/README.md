@@ -182,9 +182,9 @@ When adding new design documents:
 
 ## Agentic Development Readiness
 
-- **Quick start:** Read `dungeoncrawler/issues/README.md` and nearby issue/spec docs before editing. Review `dungeoncrawler/issues/combat-action-validation.md` for adjacent context and dependencies. Run `git --no-pager grep -n "## Agentic Development Readiness" "dungeoncrawler/issues/README.md"` to verify the documented behavior.
+- **Quick start:** Read `dungeoncrawler/issues/README.md` and capture the current scope before editing. Cross-check `dungeoncrawler/issues/combat-action-validation.md` to align terms, boundaries, and linked issue context. Align with parent context in `dungeoncrawler/README.md` before finalizing the readiness block.
 - **Key entry points:** `dungeoncrawler/issues/combat-action-validation.md`, `dungeoncrawler/issues/combat-api-endpoints.md`, `dungeoncrawler/issues/combat-database-schema.md`, `dungeoncrawler/issues/combat-engine-service.md`
-- **Verification:** Run `git --no-pager grep -n "## Agentic Development Readiness" "dungeoncrawler/issues/README.md"`.
+- **Verification:** Run `git --no-pager grep -n "## Agentic Development Readiness" "dungeoncrawler/issues/README.md"`; then run `git --no-pager grep -n "^#" "dungeoncrawler/issues/combat-action-validation.md"`.
 - **Source of truth:** Treat the checked-in code and documentation under this component directory as the authoritative reference before updating adjacent layers.
-- **Constraints / gotchas:** **Rule 1.1: Combat Must Be Active**
+- **Constraints / gotchas:** - Critical Success: roll >= DC + 10
 - **Architecture map:** `dungeoncrawler/issues/README.md`, `dungeoncrawler/issues/combat-action-validation.md`, `dungeoncrawler/issues/combat-api-endpoints.md`, `dungeoncrawler/issues/combat-database-schema.md`, `dungeoncrawler/issues/combat-engine-service.md`
