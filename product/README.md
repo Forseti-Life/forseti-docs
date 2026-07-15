@@ -13,6 +13,7 @@
 
 
 
+
 ---
 
 ## Overview
@@ -371,6 +372,9 @@ Review data and decide on strategy.
 
 ## Agentic Development Readiness
 
-- **Key entry points:** `product/README.md`
+- **Quick start:** Read `product/README.md` and capture the current scope before editing. Cross-check `product/process-flow-validation.md` to align terms, boundaries, and linked issue context. Validate repository-level consistency against `README.md` before publishing.
+- **Key entry points:** `product/process-flow-validation.md`, `README.md`, `ARCHITECTURE.md`, `product/customer-development/README.md`
+- **Verification:** Run `git --no-pager grep -n "## Agentic Development Readiness" "product/README.md"`; then run `git --no-pager grep -n "^#" "product/process-flow-validation.md"`.
 - **Source of truth:** Treat the checked-in code and documentation under this component directory as the authoritative reference before updating adjacent layers.
-- **Constraints / gotchas:** Preserve existing module boundaries, reuse local documentation and test surfaces, and avoid broad cross-repo assumptions without evidence from this subtree.
+- **Constraints / gotchas:** [ ] Notifications work in Do Not Disturb mode (critical alert option).
+- **Architecture map:** `product/README.md`, `product/process-flow-validation.md`, `README.md`, `ARCHITECTURE.md`, `product/customer-development/README.md`
