@@ -393,5 +393,9 @@ public function testAbilityBoostRules(): void {
 
 ## Agentic Development Readiness
 
+- **Quick start:** From `sites/dungeoncrawler`, run `composer install` once and execute `./vendor/bin/phpunit --testsuite=unit` before broader suites.
+- **Key entry points:** Use `sites/dungeoncrawler/web/modules/custom/dungeoncrawler_content/tests/` for test source, `sites/dungeoncrawler/web/modules/custom/dungeoncrawler_content/tests/fixtures/` for shared fixture data, and `dungeoncrawler/issues/issue-testing-strategy-design.md` for test strategy context.
+- **Verification:** Verify changes by running `./vendor/bin/phpunit --configuration web/core/phpunit.xml.dist`, then run a targeted suite such as `./vendor/bin/phpunit --testsuite=functional` for touched flows.
 - **Source of truth:** Treat the checked-in code and documentation under this component directory as the authoritative reference before updating adjacent layers.
 - **Constraints / gotchas:** Preserve existing module boundaries, reuse local documentation and test surfaces, and avoid broad cross-repo assumptions without evidence from this subtree.
+- **Architecture map:** Testing docs live in `dungeoncrawler/testing/README.md`, strategy context is in `dungeoncrawler/issues/issue-testing-strategy-design.md`, and executable tests live under `sites/dungeoncrawler/web/modules/custom/dungeoncrawler_content/tests/`.
