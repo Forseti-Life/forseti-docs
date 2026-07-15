@@ -519,5 +519,8 @@ Production Server
 
 ## Agentic Development Readiness
 
-- **Key entry points:** `README.md`, `ARCHITECTURE.md`
+- **Key entry points:** `README.md`, `copilot-hq/README.md`, `dungeoncrawler/README.md`, `market/README.md`
+- **Verification:** Run `git --no-pager grep -n "## Agentic Development Readiness" "ARCHITECTURE.md"`; then run `git --no-pager grep -n "^#" "README.md"`.
 - **Source of truth:** State which entities, tables, services, or canonical documents are authoritative so architecture work does not drift across layers.
+- **Constraints / gotchas:** # Critical files (read-only).
+- **Architecture map:** `ARCHITECTURE.md`, `README.md`, `copilot-hq/README.md`, `dungeoncrawler/README.md`, `market/README.md`
