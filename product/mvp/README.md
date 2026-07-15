@@ -1,7 +1,6 @@
+<!-- REVIEWED: 2026-07-15 -->
 # MVP (Minimum Viable Product)
 
-**Last Updated**: December 13, 2024  
-**Status**: 🟢 Live Beta Testing
 
 ---
 
@@ -353,3 +352,9 @@ Interactive safety map with H3 hexagon visualization + background location monit
 - Review all success criteria
 - Pivot or persevere decision
 - Plan for V2 or strategic change
+
+## Agentic Development Readiness
+
+- **Quick start:** Start with this README, then inspect the local architecture and install guides before changing code.
+- **Key entry points:** `product/mvp/README.md`
+- **Source of truth:** Treat the checked-in code and documentation under this component directory as the authoritative reference before updating adjacent layers.
