@@ -1,7 +1,6 @@
 <!-- REVIEWED: 2026-07-15 -->
 # Customer Development
 
-
 ---
 
 ## Purpose
@@ -206,7 +205,9 @@ This directory contains all customer development activities following Steve Blan
 
 ## Agentic Development Readiness
 
-- **Quick start:** Start with this README, then inspect the local architecture and install guides before changing code.
-- **Key entry points:** `product/customer-development/README.md`
+- **Quick start:** Read `product/customer-development/README.md` and capture the current scope before editing. Cross-check `product/customer-development/customer-interviews-log.md` to align terms, boundaries, and linked issue context. Align with parent context in `product/README.md` before finalizing the readiness block.
+- **Key entry points:** `product/customer-development/customer-interviews-log.md`, `product/customer-development/customer-segments.md`, `product/customer-development/problem-validation.md`, `product/customer-development/solution-validation.md`
+- **Verification:** Run `git --no-pager grep -n "## Agentic Development Readiness" "product/customer-development/README.md"`; then run `git --no-pager grep -n "^#" "product/customer-development/customer-interviews-log.md"`.
 - **Source of truth:** Treat the checked-in code and documentation under this component directory as the authoritative reference before updating adjacent layers.
-- **Architecture map:** Document the core runtime, source, and documentation entry points for this component.
+- **Constraints / gotchas:** 40%+ say "must have" vs "nice to have".
+- **Architecture map:** `product/customer-development/README.md`, `product/customer-development/customer-interviews-log.md`, `product/customer-development/customer-segments.md`, `product/customer-development/problem-validation.md`, `product/customer-development/solution-validation.md`
