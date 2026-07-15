@@ -397,5 +397,5 @@ public function testAbilityBoostRules(): void {
 - **Key entry points:** `dungeoncrawler/README.md`, `README.md`, `ARCHITECTURE.md`, `dungeoncrawler/issues/README.md`
 - **Verification:** Run `git --no-pager grep -n "## Agentic Development Readiness" "dungeoncrawler/testing/README.md"`; then run `git --no-pager grep -n "^#" "dungeoncrawler/README.md"`.
 - **Source of truth:** Treat the checked-in code and documentation under this component directory as the authoritative reference before updating adjacent layers.
-- **Constraints / gotchas:** - Degrees of success (critical success through critical failure)
+- **Constraints / gotchas:** # Critical files (read-only).
 - **Architecture map:** `dungeoncrawler/testing/README.md`, `dungeoncrawler/README.md`, `README.md`, `ARCHITECTURE.md`, `dungeoncrawler/issues/README.md`
