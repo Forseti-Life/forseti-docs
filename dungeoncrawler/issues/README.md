@@ -186,5 +186,5 @@ When adding new design documents:
 - **Key entry points:** `dungeoncrawler/issues/combat-action-validation.md`, `dungeoncrawler/issues/combat-api-endpoints.md`, `dungeoncrawler/issues/combat-database-schema.md`, `dungeoncrawler/issues/combat-engine-service.md`
 - **Verification:** Run `git --no-pager grep -n "## Agentic Development Readiness" "dungeoncrawler/issues/README.md"`; then run `git --no-pager grep -n "^#" "dungeoncrawler/issues/combat-action-validation.md"`.
 - **Source of truth:** Treat the checked-in code and documentation under this component directory as the authoritative reference before updating adjacent layers.
-- **Constraints / gotchas:** - Critical Success: roll >= DC + 10
+- **Constraints / gotchas:** **Rule 1.1: Combat Must Be Active**.
 - **Architecture map:** `dungeoncrawler/issues/README.md`, `dungeoncrawler/issues/combat-action-validation.md`, `dungeoncrawler/issues/combat-api-endpoints.md`, `dungeoncrawler/issues/combat-database-schema.md`, `dungeoncrawler/issues/combat-engine-service.md`
