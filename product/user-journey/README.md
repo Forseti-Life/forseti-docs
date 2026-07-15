@@ -1,3 +1,4 @@
+<!-- REVIEWED: 2026-07-15 -->
 # User Journey Documentation
 
 This directory contains detailed user journey maps for Forseti/AmISafe personas.
@@ -78,3 +79,11 @@ When creating new user journeys, include:
 - Track real user cohorts matching each persona
 - Measure drop-off rates at each journey stage
 - Iterate based on behavioral data
+
+## Agentic Development Readiness
+
+- **Quick start:** Start with this README, then inspect the local architecture and install guides before changing code.
+- **Key entry points:** `product/user-journey/README.md`
+- **Source of truth:** Treat the checked-in code and documentation under this component directory as the authoritative reference before updating adjacent layers.
+- **Constraints / gotchas:** Preserve existing module boundaries, reuse local documentation and test surfaces, and avoid broad cross-repo assumptions without evidence from this subtree.
+- **Architecture map:** Document the core runtime, source, and documentation entry points for this component.
