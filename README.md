@@ -1,4 +1,6 @@
+<!-- REVIEWED: 2026-07-15 -->
 <!-- AUTOMATION VALIDATION: 2026-04-23 - automation of development confirmed for this repo -->
+
 # Forseti.life - Documentation Hub
 
 **Last Updated**: February 19, 2026  
@@ -637,3 +639,12 @@ For additional documentation:
 ---
 
 **Last Updated**: February 2026
+
+## Agentic Development Readiness
+
+- **Quick start:** Read `README.md` and capture the current scope before editing. Cross-check `ARCHITECTURE.md` to align terms, boundaries, and linked issue context. Validate repository-level consistency against `ARCHITECTURE.md` before publishing.
+- **Key entry points:** `ARCHITECTURE.md`, `copilot-hq/README.md`, `dungeoncrawler/README.md`, `market/README.md`
+- **Verification:** Run `git --no-pager grep -n "## Agentic Development Readiness" "README.md"`; then run `git --no-pager grep -n "^#" "ARCHITECTURE.md"`.
+- **Source of truth:** Canonical documentation for `Forseti-Life/copilot-hq` now lives here, including:
+- **Constraints / gotchas:** # Critical files (read-only).
+- **Architecture map:** `README.md`, `ARCHITECTURE.md`, `copilot-hq/README.md`, `dungeoncrawler/README.md`, `market/README.md`
