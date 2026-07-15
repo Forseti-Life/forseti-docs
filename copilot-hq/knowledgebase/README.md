@@ -1,4 +1,4 @@
-<!-- REVIEWED: 2026-07-14 -->
+<!-- REVIEWED: 2026-07-15 -->
 # Continuous Improvement Knowledgebase
 
 This is a shared, cross-agent learning system for capturing mistakes, regressions, and improvements.
@@ -38,3 +38,11 @@ Proposals should include:
 - a suggested diff snippet
 
 CEO/human owner reviews and approves before changes are applied to the target repo.
+
+## Agentic Development Readiness
+
+- **Quick start:** Start with this README, then inspect the local architecture and install guides before changing code.
+- **Key entry points:** `copilot-hq/knowledgebase/README.md`
+- **Verification:** Run the narrowest existing tests or validation commands that exercise this component before marking work complete.
+- **Source of truth:** Treat the checked-in code and documentation under this component directory as the authoritative reference before updating adjacent layers.
+- **Architecture map:** Document the core runtime, source, and documentation entry points for this component.
