@@ -1,3 +1,4 @@
+<!-- REVIEWED: 2026-07-15 -->
 # Forseti.life - Infrastructure Architecture
 
 ## System Overview
@@ -515,3 +516,8 @@ Production Server
 ---
 
 **Last Updated**: February 6, 2026
+
+## Agentic Development Readiness
+
+- **Key entry points:** `README.md`, `ARCHITECTURE.md`
+- **Source of truth:** State which entities, tables, services, or canonical documents are authoritative so architecture work does not drift across layers.

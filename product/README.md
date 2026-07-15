@@ -1,7 +1,9 @@
-<!-- REVIEWED: 2026-07-14 -->
+<!-- REVIEWED: 2026-07-15 -->
 # Forseti Product Documentation
 
 **Methodology**: Lean Startup (Eric Ries)
+
+
 
 ---
 
@@ -358,3 +360,9 @@ Review data and decide on strategy.
 | Date | Change | Author |
 |------|--------|--------|
 | 2024-12-13 | Initial framework setup | Keith Aumiller |
+
+## Agentic Development Readiness
+
+- **Key entry points:** `product/README.md`
+- **Source of truth:** Treat the checked-in code and documentation under this component directory as the authoritative reference before updating adjacent layers.
+- **Constraints / gotchas:** Preserve existing module boundaries, reuse local documentation and test surfaces, and avoid broad cross-repo assumptions without evidence from this subtree.

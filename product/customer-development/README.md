@@ -1,7 +1,6 @@
+<!-- REVIEWED: 2026-07-15 -->
 # Customer Development
 
-**Last Updated**: December 13, 2024  
-**Status**: 🟡 Templates Ready - Validation In Progress
 
 ---
 
@@ -204,3 +203,10 @@ This directory contains all customer development activities following Steve Blan
 - Know the current alternatives and why they fall short
 - Understand willingness to pay thresholds
 - Have confidence in target segment prioritization
+
+## Agentic Development Readiness
+
+- **Quick start:** Start with this README, then inspect the local architecture and install guides before changing code.
+- **Key entry points:** `product/customer-development/README.md`
+- **Source of truth:** Treat the checked-in code and documentation under this component directory as the authoritative reference before updating adjacent layers.
+- **Architecture map:** Document the core runtime, source, and documentation entry points for this component.
