@@ -1,3 +1,4 @@
+<!-- REVIEWED: 2026-07-15 -->
 # Copilot HQ Documentation
 
 This directory is the canonical documentation home for
@@ -18,3 +19,12 @@ The managed repository workspace root is `/home/ubuntu/forseti.life`. The
 canonical HQ repo root is `/home/ubuntu/forseti.life/copilot-hq`, while product
 and module development should happen in the owning sibling repositories under
 `/home/ubuntu/forseti.life/*`.
+
+## Agentic Development Readiness
+
+- **Quick start:** Read `copilot-hq/README.md` and capture the current scope before editing. Cross-check `README.md` to align terms, boundaries, and linked issue context. Validate repository-level consistency against `README.md` before publishing.
+- **Key entry points:** `README.md`, `ARCHITECTURE.md`, `copilot-hq/knowledgebase/README.md`, `copilot-hq/knowledgebase/lessons/README.md`
+- **Verification:** Run `git --no-pager grep -n "## Agentic Development Readiness" "copilot-hq/README.md"`; then run `git --no-pager grep -n "^#" "README.md"`.
+- **Source of truth:** This directory is the canonical documentation home for
+- **Constraints / gotchas:** # Critical files (read-only).
+- **Architecture map:** `copilot-hq/README.md`, `README.md`, `ARCHITECTURE.md`, `copilot-hq/knowledgebase/README.md`, `copilot-hq/knowledgebase/lessons/README.md`
