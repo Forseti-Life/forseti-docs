@@ -1,7 +1,6 @@
 <!-- REVIEWED: 2026-07-15 -->
 # Lean Canvas
 
-
 ---
 
 ## Purpose
@@ -281,8 +280,9 @@ Canvas should evolve as you learn.
 
 ## Agentic Development Readiness
 
-- **Quick start:** Start with this README, then inspect the local architecture and install guides before changing code.
-- **Key entry points:** `product/lean-canvas/README.md`
-- **Verification:** Run the narrowest existing tests or validation commands that exercise this component before marking work complete.
+- **Quick start:** Read `product/lean-canvas/README.md` and capture the current scope before editing. Cross-check `product/lean-canvas/forseti-lean-canvas.md` to align terms, boundaries, and linked issue context. Align with parent context in `product/README.md` before finalizing the readiness block.
+- **Key entry points:** `product/lean-canvas/forseti-lean-canvas.md`, `product/README.md`, `README.md`, `ARCHITECTURE.md`
+- **Verification:** Run `git --no-pager grep -n "## Agentic Development Readiness" "product/lean-canvas/README.md"`; then run `git --no-pager grep -n "^#" "product/lean-canvas/forseti-lean-canvas.md"`.
 - **Source of truth:** Treat the checked-in code and documentation under this component directory as the authoritative reference before updating adjacent layers.
-- **Architecture map:** Document the core runtime, source, and documentation entry points for this component.
+- **Constraints / gotchas:** # Critical files (read-only).
+- **Architecture map:** `product/lean-canvas/README.md`, `product/lean-canvas/forseti-lean-canvas.md`, `product/README.md`, `README.md`, `ARCHITECTURE.md`
