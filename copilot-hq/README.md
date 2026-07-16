@@ -1,4 +1,4 @@
-<!-- REVIEWED: 2026-07-15 -->
+<!-- REVIEWED: 2026-07-16 -->
 # Copilot HQ Documentation
 
 This directory is the canonical documentation home for
@@ -26,5 +26,5 @@ and module development should happen in the owning sibling repositories under
 - **Key entry points:** `README.md`, `ARCHITECTURE.md`, `copilot-hq/knowledgebase/README.md`, `copilot-hq/knowledgebase/lessons/README.md`
 - **Verification:** Run `git --no-pager grep -n "## Agentic Development Readiness" "copilot-hq/README.md"`; then run `git --no-pager grep -n "^#" "README.md"`.
 - **Source of truth:** This directory is the canonical documentation home for
-- **Constraints / gotchas:** # Critical files (read-only).
+- **Constraints / gotchas:** **Constraints / gotchas:** # Critical files (read-only).
 - **Architecture map:** `copilot-hq/README.md`, `README.md`, `ARCHITECTURE.md`, `copilot-hq/knowledgebase/README.md`, `copilot-hq/knowledgebase/lessons/README.md`
