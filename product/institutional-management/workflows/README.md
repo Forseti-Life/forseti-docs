@@ -1,4 +1,4 @@
-<!-- REVIEWED: 2026-07-15 -->
+<!-- REVIEWED: 2026-07-16 -->
 # Institutional Management Workflows
 
 ---
@@ -112,5 +112,5 @@ Each workflow document should include:
 - **Key entry points:** `product/institutional-management/workflows/founder-journey.md`, `product/institutional-management/workflows/institution-onboarding.md`
 - **Verification:** Run `git --no-pager grep -n "## Agentic Development Readiness" "product/institutional-management/workflows/README.md"`; then run `git --no-pager grep -n "^#" "product/institutional-management/workflows/founder-journey.md"`.
 - **Source of truth:** Treat the checked-in code and documentation under this component directory as the authoritative reference before updating adjacent layers.
-- **Constraints / gotchas:** ### Phase 1: Must-Have (MVP).
+- **Constraints / gotchas:** **Required Before Starting**:.
 - **Architecture map:** `product/institutional-management/workflows/README.md`, `product/institutional-management/workflows/founder-journey.md`, `product/institutional-management/workflows/institution-onboarding.md`
