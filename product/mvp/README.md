@@ -1,4 +1,4 @@
-<!-- REVIEWED: 2026-07-15 -->
+<!-- REVIEWED: 2026-07-16 -->
 # MVP (Minimum Viable Product)
 
 ---
