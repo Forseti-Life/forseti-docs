@@ -1,4 +1,4 @@
-<!-- REVIEWED: 2026-07-15 -->
+<!-- REVIEWED: 2026-07-16 -->
 # PF2E Reference Documentation Outlines - Index
 
 This directory contains detailed outlines for all Pathfinder Second Edition reference documentation .txt files located in `docs/dungeoncrawler/reference documentation/`.
@@ -91,7 +91,9 @@ These outlines were generated from the text file versions of the PDF documents. 
 
 ## Agentic Development Readiness
 
-- **Quick start:** Start with this README, then inspect the local architecture and install guides before changing code.
-- **Key entry points:** `dungeoncrawler/reference documentation/outlines/README.md`
-- **Verification:** Run the narrowest existing tests or validation commands that exercise this component before marking work complete.
+- **Quick start:** Read `dungeoncrawler/reference documentation/outlines/README.md` and capture the current scope before editing. Cross-check `dungeoncrawler/reference documentation/outlines/METHODOLOGY.md` to align terms, boundaries, and linked issue context. Align with parent context in `dungeoncrawler/README.md` before finalizing the readiness block.
+- **Key entry points:** `dungeoncrawler/reference documentation/outlines/METHODOLOGY.md`, `dungeoncrawler/reference documentation/outlines/PF2E_Advanced_Players_Guide_OUTLINE.md`, `dungeoncrawler/reference documentation/outlines/PF2E_Bestiary_1_OUTLINE.md`, `dungeoncrawler/reference documentation/outlines/PF2E_Bestiary_2_OUTLINE.md`
+- **Verification:** Run `git --no-pager grep -n "## Agentic Development Readiness" "dungeoncrawler/reference documentation/outlines/README.md"`; then run `git --no-pager grep -n "^#" "dungeoncrawler/reference documentation/outlines/METHODOLOGY.md"`.
 - **Source of truth:** Treat the checked-in code and documentation under this component directory as the authoritative reference before updating adjacent layers.
+- **Constraints / gotchas:** No additional scoped constraints identified during this review.
+- **Architecture map:** `dungeoncrawler/reference documentation/outlines/README.md`, `dungeoncrawler/reference documentation/outlines/METHODOLOGY.md`, `dungeoncrawler/reference documentation/outlines/PF2E_Advanced_Players_Guide_OUTLINE.md`, `dungeoncrawler/reference documentation/outlines/PF2E_Bestiary_1_OUTLINE.md`, `dungeoncrawler/reference documentation/outlines/PF2E_Bestiary_2_OUTLINE.md`
