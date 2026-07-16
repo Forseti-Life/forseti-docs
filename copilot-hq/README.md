@@ -25,6 +25,6 @@ and module development should happen in the owning sibling repositories under
 - **Quick start:** Read `copilot-hq/README.md` and capture the current scope before editing. Cross-check `README.md` to align terms, boundaries, and linked issue context. Validate repository-level consistency against `README.md` before publishing.
 - **Key entry points:** `README.md`, `ARCHITECTURE.md`, `copilot-hq/knowledgebase/README.md`, `copilot-hq/knowledgebase/lessons/README.md`
 - **Verification:** Run `git --no-pager grep -n "## Agentic Development Readiness" "copilot-hq/README.md"`; then run `git --no-pager grep -n "^#" "README.md"`.
-- **Source of truth:** This directory is the canonical documentation home for
-- **Constraints / gotchas:** **Constraints / gotchas:** # Critical files (read-only).
+- **Source of truth:** the HQ checkout while this repo remains the source of truth.
+- **Constraints / gotchas:** All agents MUST read the target repository instructions before making changes.
 - **Architecture map:** `copilot-hq/README.md`, `README.md`, `ARCHITECTURE.md`, `copilot-hq/knowledgebase/README.md`, `copilot-hq/knowledgebase/lessons/README.md`
