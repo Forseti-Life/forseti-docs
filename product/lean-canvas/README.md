@@ -1,4 +1,4 @@
-<!-- REVIEWED: 2026-07-15 -->
+<!-- REVIEWED: 2026-07-16 -->
 # Lean Canvas
 
 ---
@@ -284,5 +284,5 @@ Canvas should evolve as you learn.
 - **Key entry points:** `product/lean-canvas/forseti-lean-canvas.md`, `product/README.md`, `README.md`, `ARCHITECTURE.md`
 - **Verification:** Run `git --no-pager grep -n "## Agentic Development Readiness" "product/lean-canvas/README.md"`; then run `git --no-pager grep -n "^#" "product/lean-canvas/forseti-lean-canvas.md"`.
 - **Source of truth:** Treat the checked-in code and documentation under this component directory as the authoritative reference before updating adjacent layers.
-- **Constraints / gotchas:** # Critical files (read-only).
+- **Constraints / gotchas:** Why unfair: _[Difficult to establish relationships, trust-building required]_.
 - **Architecture map:** `product/lean-canvas/README.md`, `product/lean-canvas/forseti-lean-canvas.md`, `product/README.md`, `README.md`, `ARCHITECTURE.md`
