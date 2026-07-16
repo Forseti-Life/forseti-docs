@@ -1,4 +1,4 @@
-<!-- REVIEWED: 2026-07-15 -->
+<!-- REVIEWED: 2026-07-16 -->
 # Dungeon Crawler Forseti Life Documentation Hub
 
 This directory contains player reference material, system design notes, and implementation documentation for Dungeon Crawler Forseti Life.
