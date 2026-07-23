@@ -5,6 +5,17 @@
 This runbook covers the full setup of the local LLM inference layer (`llm/`) on a new or
 upgraded machine. Follow this when storage and hardware are ready.
 
+### Canonical runtime guardrail (read first)
+
+- The authoritative local LLM service for this host is the host-level llama server at:
+  - `http://127.0.0.1:8080`
+  - service workspace: `/root/llm-local`
+- **Do not bootstrap a new per-repo LLM runtime** if this host service already exists.
+- Before running `./llm/setup.sh` or downloading models in a repo, verify host runtime health:
+  - `curl http://127.0.0.1:8080/v1/models`
+  - `ls -lah /root/llm-local/models`
+- Use this runbook for initial host provisioning or explicit host-runtime rebuilds, not ad-hoc repo-local reinstalls.
+
 ## Status Tracking
 
 When you are ready to set up the models, search for this file:
