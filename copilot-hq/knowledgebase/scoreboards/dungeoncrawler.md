@@ -2,6 +2,20 @@
 
 > Update weekly. Track only a few metrics that drive behavior.
 
+## 2026-07-31 — canonical authority convergence closeout registered
+
+| Metric | Target | Actual | Notes |
+|--------|--------|--------|-------|
+| Architecture closeout registration | 100% of multi-phase items | complete | Disposition/aggression/combat-entry/stance convergence item archived with gate scorecard 100% complete across phases 1-11. |
+| Canonical authority drift incidents | 0 | 0 | No failing contract evidence in closeout sweep; all touched canonical authority seams pass. |
+| Rework risk from stale “open” documentation | 0 | mitigated | Inbox docs normalized from stale “still open” text to post-gate validation backlog; lesson registered in `knowledgebase/lessons/20260731-dc-disposition-subsystem-canonical-authority-closeout.md`. |
+| Post-closeout validation debt | <= 2 bounded checks | 2 | Remaining non-gate checks are bounded: live campaign end-to-end smoke and legacy-save sanity pass. |
+
+**Closeout registration links:**
+- `sessions/ceo-copilot-2/outbox/20260731-attitude-stance-combat-architecture-closeout.md`
+- `sessions/ceo-copilot-2/inbox/_archived/20260730-attitude-stance-combat-architecture/README.md`
+- `knowledgebase/lessons/20260731-dc-disposition-subsystem-canonical-authority-closeout.md`
+
 ## 2026-05-11 — production audit rerun / clean with one PM ACL question
 
 | Metric | Target | Actual | Notes |
